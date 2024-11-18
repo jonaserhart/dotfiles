@@ -8,7 +8,7 @@ return {
       "mfussenegger/nvim-dap",
     },
     config = function()
-      require("plugins.languages.go.config").setup()
+      require("plugins.languages.go.config.lang-config").setup()
     end,
     ft = { "go", "gomod", "gowork", "gosum" },
   },

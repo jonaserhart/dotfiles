@@ -34,6 +34,7 @@ return {
 
   -- Binaries
   { "williamboman/mason.nvim",           import = "plugins.config.mason" },
+  { "nvimtools/none-ls.nvim",           import = "plugins.config.null-ls" },
 
   -- Org
   { "nvim-orgmode/orgmode",              import = "plugins.config.org" },
