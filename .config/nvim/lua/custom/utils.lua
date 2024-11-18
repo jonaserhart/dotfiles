@@ -1,0 +1,29 @@
+local req_custom_module = function(modulesubpath)
+  local environment = vim.env.NVIMENV
+  if environment ~= nil then
+    local modulefound, module = pcall(require, "custom." .. environment .. "." .. modulesubpath)
+    if modulefound then
+      return module
+    else
+      return nil
+    end
+  else
+    vim.notify("Could ont read custom module '" .. modulesubpath .. "' no NVIMENV found.", vim.log.levels.ERROR)
+  end
+end
+
+local get_custom_config = function(key, default)
+  local environment = vim.env.NVIMENV
+  if environment ~= nil then
+    local config = req_custom_module("configs")[key]
+    if config ~= nil then
+      return config
+    else
+      return default
+    end
+  else
+    vim.notify("Could not read custom config key '" .. key .. "' no NVIMENV found.", vim.log.levels.ERROR)
+  end
+end
+
+return { req_custom_module = req_custom_module, get_custom_config = get_custom_config }
