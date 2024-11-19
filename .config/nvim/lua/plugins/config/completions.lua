@@ -100,7 +100,6 @@ return {
     vim.api.nvim_set_hl(0, "CmpItemKindTypeParameter", { fg = "#58B5A8", bg = "NONE" })
 
     -- Set up custom snippets
-
-    require("custom.utils").req_custom_module("snippets")
+    require("config.utils").req_custom_module("snippets")
   end,
 }

@@ -2,8 +2,10 @@ local M = {}
 
 function M.setup()
   local lspconfig = require("lspconfig")
+  local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
   lspconfig.gopls.setup({
+    capabilities = capabilities,
     settings = {
       gopls = {
         experimentalPostfixCompletions = true,

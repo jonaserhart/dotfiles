@@ -1,4 +1,6 @@
 require("config.vim-options")
 require("config.lazy")
 
-require("custom.common.autocmds").setup()
+-- set up custom user commands
+require("config.usercmds").setup()
+

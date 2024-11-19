@@ -10,7 +10,5 @@
 /.config/*
 !/.config/nvim/
 /.config/nvim/lua/custom/**/*
-!/.config/nvim/lua/custom/utils.lua
-!/.config/nvim/lua/custom/common/
 
 /**/.DS_Store

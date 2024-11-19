@@ -3,7 +3,7 @@ return {
   event = 'VeryLazy',
   ft = { 'org' },
   config = function()
-    local org_files_path = require("custom.utils").get_custom_config("orgfiles", "~/orgfiles/")
+    local org_files_path = require("config.utils").get_custom_config("orgfiles", "~/orgfiles/")
     -- Setup orgmode
     require('orgmode').setup({
       org_agenda_files = (org_files_path .. '**/*'),
