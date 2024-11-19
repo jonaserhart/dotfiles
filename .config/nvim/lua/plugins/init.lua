@@ -4,7 +4,7 @@ return {
   { "AlexvZyl/nordic.nvim",                    import = "plugins.config.color-scheme" },
   { "nvimdev/dashboard-nvim",                  import = "plugins.config.dashboard" },
   { "RRethy/vim-illuminate",                   import = "plugins.config.illuminate" },
-  { "nim-lualine/lualine.nvim",                import = "plugins.config.statusline" },
+  { "nvim-lualine/lualine.nvim",               import = "plugins.config.statusline" },
   { "rcarriga/nvim-notify",                    import = "plugins.config.notify" },
   { "nvim-tree/nvim-tree.lua",                 import = "plugins.config.tree" },
   { "filipdutescu/renamer.nvim",               import = "plugins.config.renamer" },

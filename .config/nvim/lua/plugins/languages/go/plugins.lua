@@ -36,5 +36,8 @@ return {
       -- DAP
       require("plugins.languages.go.config.dap").setup()
     end
+  },
+  {
+    "hexdigest/gounit-vim"
   }
 }
