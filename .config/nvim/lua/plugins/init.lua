@@ -22,10 +22,10 @@ return {
   { "andythigpen/nvim-coverage",               import = "plugins.config.code-coverage" },
   { "mfussenegger/nvim-dap",                   import = "plugins.config.debug" },
   { "williamboman/mason-lspconfig.nvim",       import = "plugins.config.mason-lspconfig" },
+  { "ThePrimeagen/refactoring.nvim",       import = "plugins.config.refactoring" },
 
   -- Formatting
   { "nvim-treesitter/nvim-treesitter",         import = "plugins.config.treesitter" },
-  { "stevearc/conform.nvim",                   import = "plugins.config.conform" },
 
   -- Version control
   { "sindrets/diffview.nvim",                  import = "plugins.config.diffview" },

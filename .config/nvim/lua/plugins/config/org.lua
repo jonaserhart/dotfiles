@@ -12,9 +12,9 @@ return {
       org_agenda_min_height = 30,
       org_agenda_filter = '/',
       org_capture_templates = {
-        t = { description = 'new ticket', template = 'ticket%?', target = org_files_path .. 'tickets.org', },
-        g = { description = 'todo', template = '* TODO %?\n\tDEADLINE: %^{due}t', target = org_files_path .. 'todos.org' },
-        m = { description = 'meeting', template = 'meetingnotes%?', target = org_files_path .. 'meetings.org' },
+        t = { description = 'new ticket', template = 'ticket%?', target = org_files_path .. 'tickets.org', properties = { before = 2 } },
+        g = { description = 'todo', template = '* TODO %?\n\tDEADLINE: %^{due}t', target = org_files_path .. 'todos.org', properties = { before = 2 } },
+        m = { description = 'meeting', template = 'meetingnotes%?', target = org_files_path .. 'meetings.org', properties = { before = 2 } },
         n = { description = 'note', template = 'note%i', target = org_files_path .. 'notes.org' },
       },
       notifications = {

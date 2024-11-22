@@ -25,14 +25,6 @@ vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 vim.opt.foldenable = false
 
--- format on save using current LSP
-vim.api.nvim_create_autocmd("BufWritePre", {
-  pattern = "*",
-  callback = function(args)
-    require("conform").format({ bufnr = args.buf })
-  end,
-})
-
 -- fix for DAP coloring
 vim.api.nvim_create_autocmd("ColorScheme", {
   pattern = "*",
