@@ -24,7 +24,7 @@ function M.setup()
     return nil
   end
 
-  local gotest_action = h.make_builtin({
+  local gogeneratetest = h.make_builtin({
     name = "gotest_generator",
     method = methods.internal.CODE_ACTION,
     filetypes = { "go" },
@@ -52,8 +52,18 @@ function M.setup()
       end,
     },
   })
+  local gotest = require("go.null_ls").gotest()
+  local gotest_codeaction = require("go.null_ls").gotest_action()
+  local golangci_lint = require("go.null_ls").golangci_lint()
 
-  null_ls.register(gotest_action)
+  null_ls.register({
+    gogeneratetest,
+    null_ls.builtins.code_actions.gomodifytags,
+    null_ls.builtins.code_actions.impl,
+    gotest,
+    gotest_codeaction,
+    golangci_lint
+  })
 end
 
 return M
