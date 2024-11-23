@@ -8,7 +8,6 @@ return {
         "golangci_lint_ls",
         "bashls",
         "vtsls",
-        "ts_ls",
       },
     })
   end,
