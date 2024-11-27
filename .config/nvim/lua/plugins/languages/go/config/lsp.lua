@@ -20,7 +20,7 @@ function M.setup()
         },
         staticcheck = true,
         gofumpt = true,
-        vulncheck = "imports",
+        vulncheck = "Imports",
         usePlaceholders = true,
       },
     },

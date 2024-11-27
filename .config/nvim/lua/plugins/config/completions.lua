@@ -1,5 +1,5 @@
 return {
-  "hrsh7th/nvim-cmp", 
+  "hrsh7th/nvim-cmp",
   dependencies = {
     "onsails/lspkind.nvim",
     "L3MON4D3/LuaSnip",
@@ -16,11 +16,12 @@ return {
         end,
       },
       window = {
-        completion = {
-          winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,Search:None",
-          col_offset = -3,
-          side_padding = 0,
-        },
+        completion = cmp.config.window.bordered({
+          winhighlight = 'Normal:Normal,FloatBorder:BorderBG,CursorLine:Visual,Search:None'
+        }),
+      },
+      experimental = {
+        ghost_text = true,
       },
       formatting = {
         fields = { "kind", "abbr", "menu" },

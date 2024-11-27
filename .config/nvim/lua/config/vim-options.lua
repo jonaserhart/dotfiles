@@ -4,7 +4,7 @@ vim.cmd("set tabstop=2")
 vim.cmd("set softtabstop=2")
 vim.cmd("set shiftwidth=2")
 vim.cmd("set number")
-vim.cmd("set fillchars+=vert:\\ ")
+-- vim.cmd("set fillchars+=vert:\\ ")
 vim.cmd("nnoremap <SPACE> <Nop>")
 vim.cmd("tnoremap <ESC> <C-\\><C-n>")
 vim.g.loaded_netrw = 1
