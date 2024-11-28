@@ -3,7 +3,7 @@ return {
   config = function()
     require("workspaces").setup({
       hooks = {
-        open = { "NvimTreeOpen", "Telescope find_files" },
+        open = { "Neotree filesystem reveal left", "Telescope find_files" },
       }
     })
   end

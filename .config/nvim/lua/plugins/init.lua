@@ -6,12 +6,14 @@ return {
   { "RRethy/vim-illuminate",                   import = "plugins.config.illuminate" },
   { "nvim-lualine/lualine.nvim",               import = "plugins.config.statusline" },
   { "rcarriga/nvim-notify",                    import = "plugins.config.notify" },
-  { "nvim-tree/nvim-tree.lua",                 import = "plugins.config.tree" },
+  { "nvim-neo-tree/neo-tree.nvim",             import = "plugins.config.tree" },
   { "filipdutescu/renamer.nvim",               import = "plugins.config.renamer" },
   { "nvim-telescope/telescope.nvim",           import = "plugins.config.telescope" },
   { "nvim-telescope/telescope-ui-select.nvim", import = "plugins.config.telescope-ui-select" },
   { "rachartier/tiny-code-action.nvim",        import = "plugins.config.tiny-code-action" },
   { "folke/trouble.nvim",                      import = "plugins.config.trouble" },
+  { "folke/edgy.nvim",                         import = "plugins.config.edgy" },
+
 
   -- Completion
   { "hrsh7th/nvim-cmp",                        import = "plugins.config.completions" },
@@ -22,7 +24,7 @@ return {
   { "andythigpen/nvim-coverage",               import = "plugins.config.code-coverage" },
   { "mfussenegger/nvim-dap",                   import = "plugins.config.debug" },
   { "williamboman/mason-lspconfig.nvim",       import = "plugins.config.mason-lspconfig" },
-  { "ThePrimeagen/refactoring.nvim",       import = "plugins.config.refactoring" },
+  { "ThePrimeagen/refactoring.nvim",           import = "plugins.config.refactoring" },
 
   -- Formatting
   { "nvim-treesitter/nvim-treesitter",         import = "plugins.config.treesitter" },

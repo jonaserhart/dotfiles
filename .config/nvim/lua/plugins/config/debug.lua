@@ -22,25 +22,25 @@ return {
     vim.keymap.set('n', '<F11>', dap.step_into)
     vim.keymap.set('n', '<leader>K', dapui.eval)
 
-    local nvimtreeapi = require("nvim-tree.api")
 
     vim.keymap.set('n', '<leader><F5>', dap.terminate)
 
     dap.listeners.before.attach.dapui_config = function()
       dapui.open()
+      vim.cmd("Neotree close")
       nvimtreeapi.tree.close()
     end
     dap.listeners.before.launch.dapui_config = function()
       dapui.open()
-      nvimtreeapi.tree.close()
+      vim.cmd("Neotree close")
     end
     dap.listeners.before.event_terminated.dapui_config = function()
       dapui.close()
-      nvimtreeapi.tree.open()
+      vim.cmd("Neotree filesystem reveal left")
     end
     dap.listeners.before.event_exited.dapui_config = function()
       dapui.close()
-      nvimtreeapi.tree.open()
+      vim.cmd("Neotree filesystem reveal left")
     end
   end,
 

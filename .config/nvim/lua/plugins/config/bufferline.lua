@@ -7,7 +7,7 @@ return {
       options = {
         offsets = {
           {
-            filetype = "NvimTree",
+            filetype = "neo-tree",
             text = function()
               return vim.fn.getcwd()
             end,

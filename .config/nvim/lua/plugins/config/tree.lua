@@ -1,39 +1,22 @@
 return {
-  "nvim-tree/nvim-tree.lua",
+  "nvim-neo-tree/neo-tree.nvim",
+  branch = "v3.x",
   dependencies = {
+    "nvim-lua/plenary.nvim",
     "nvim-tree/nvim-web-devicons",
+    "MunifTanjim/nui.nvim",
   },
   config = function()
-    require("nvim-tree").setup({
-      sort = {
-        sorter = "case_sensitive",
-      },
-      view = {
-        width = 40,
-      },
-      renderer = {
-        group_empty = true,
-        root_folder_label = false,
-      },
-      filters = {
-        dotfiles = false,
-      },
-      update_focused_file = {
-        enable = true,
-      },
-      on_attach = function(bufnr)
-        local api = require("nvim-tree.api")
-
-        api.config.mappings.default_on_attach(bufnr)
-        local function opts(desc)
-          return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
-        end
-
-        vim.keymap.set("n", "s", api.node.open.edit, opts("Open"))
-      end,
+    require("neo-tree").setup({
+      filesystem = {
+        follow_current_file = {
+          enabled = true,          -- This will find and focus the file in the active buffer every time
+          --               -- the current file is changed while the tree is open.
+          leave_dirs_open = false, -- `false` closes auto expanded dirs, such as with `:Neotree reveal`
+        },
+      }
     })
-
-    vim.keymap.set("n", "<C-n>", ":NvimTreeFocus<CR>", {})
-    vim.keymap.set("n", "<C-C>", ":NvimTreeClose<CR>", {})
+    vim.keymap.set("n", "<C-n>", ":Neotree filesystem reveal left<CR>", {})
+    vim.keymap.set("n", "<C-C>", ":Neotree filesystem close<CR>", {})
   end,
 }
