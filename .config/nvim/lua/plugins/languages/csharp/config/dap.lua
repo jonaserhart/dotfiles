@@ -45,6 +45,7 @@ local function get_program_dll()
 	for line in content:gmatch("[^\r\n]+") do
 		local proj_path = line:match('Project%([^)]+%).%s*=%s*"[^"]+"%s*,%s*"([^"]+)"')
 		if proj_path then
+			print("[cs-find-debug-file]: Found project path", proj_path)
 			local abs_path = vim.fn.fnamemodify(sln_path, ":h") .. "/" .. proj_path
 			abs_path = abs_path:gsub("\\", "/")
 
@@ -52,6 +53,8 @@ local function get_program_dll()
 			if proj_content then
 				local output_type = proj_content:match("<OutputType>([^<]+)</OutputType>")
 				local assembly_name = proj_content:match("<AssemblyName>([^<]+)</AssemblyName>")
+				print("[cs-find-debug-file]: output type", output_type)
+				print("[cs-find-debug-file]: assembly_name", assembly_name)
 
 				if output_type and output_type:lower() == "exe" then
 					local target_framework = proj_content:match("<TargetFramework>([^<]+)</TargetFramework>")
@@ -61,6 +64,7 @@ local function get_program_dll()
 							target_framework = frameworks:match("([^;]+)")
 						end
 					end
+					print("[cs-find-debug-file]: target_framework", target_framework)
 
 					if target_framework and assembly_name then
 						local dll_path = vim.fn.fnamemodify(abs_path, ":h")

@@ -28,6 +28,7 @@ return {
 
   -- Formatting
   { "nvim-treesitter/nvim-treesitter",         import = "plugins.config.treesitter" },
+  { "nvim-treesitter/nvim-treesitter-context", import = "plugins.config.treesitter-context" },
 
   -- Version control
   { "sindrets/diffview.nvim",                  import = "plugins.config.diffview" },
@@ -44,7 +45,6 @@ return {
 
   -- Terminal
   { "akinsho/toggleterm.nvim",                 import = "plugins.config.terminal" },
-
 
   -- Language-specific
   { import = "plugins.languages.go.plugins" },
