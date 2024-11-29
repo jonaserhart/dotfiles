@@ -18,14 +18,7 @@ return {
                     -- vim.notify(warning)
                     return false
                   end
-                  print('Formatting with client (format_buffer): ' .. client.name)
-                  vim.schedule(function()
-                    require("notify")(
-                      string.format(
-                        "Running: lua vim.lsp.buf.format(...) :: Formatting file on buf %s using attached client: %s",
-                        bufnr,
-                        client.name))
-                  end)
+                  -- print('Formatting with client (format_buffer): ' .. client.name)
                   return true
                 end
               })
@@ -45,6 +38,7 @@ return {
 
     -- common builtins
     null_ls.register({
+      null_ls.builtins.code_actions.refactoring,
       null_ls.builtins.diagnostics.semgrep,
     })
   end
