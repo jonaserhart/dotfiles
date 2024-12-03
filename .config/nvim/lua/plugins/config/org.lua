@@ -1,7 +1,15 @@
 return {
   "nvim-orgmode/orgmode",
-  event = "VeryLazy",
-  ft = { "org" },
+  event = 'VeryLazy',
+  dependencies = {
+    {
+      "akinsho/org-bullets.nvim",
+      config = function()
+        require("org-bullets").setup()
+      end
+    }
+  },
+  ft = { 'org' },
   config = function()
     local org_files_path = require("config.utils").get_custom_config("orgfiles", "~/orgfiles/")
     -- Setup orgmode
