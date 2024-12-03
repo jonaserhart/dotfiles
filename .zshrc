@@ -41,3 +41,4 @@ export PATH="/Users/jonas.erhart/.rd/bin:$PATH"
 ### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
 
 alias k="kubectl"
+alias lsl="ls -l"

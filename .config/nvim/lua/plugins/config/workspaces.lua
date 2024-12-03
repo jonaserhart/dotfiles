@@ -3,7 +3,7 @@ return {
   config = function()
     require("workspaces").setup({
       hooks = {
-        open = { "Neotree filesystem reveal left", "Telescope find_files" },
+        open = { "Telescope git_worktree" },
       }
     })
   end

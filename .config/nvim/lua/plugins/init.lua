@@ -28,11 +28,13 @@ return {
 
   -- Formatting
   { "nvim-treesitter/nvim-treesitter",         import = "plugins.config.treesitter" },
+  { "nvim-treesitter/nvim-treesitter-context",  import = "plugins.config.treesitter-context" },
 
   -- Version control
   { "sindrets/diffview.nvim",                  import = "plugins.config.diffview" },
   { "lewis6991/gitsigns.nvim",                 import = "plugins.config.gitsigns" },
   { "FabijanZulj/blame.nvim",                  import = "plugins.config.blame" },
+  { "ThePrimeagen/git-worktree.nvim",          import = "plugins.config.gitworktree" },
 
   -- Binaries
   { "williamboman/mason.nvim",                 import = "plugins.config.mason" },
