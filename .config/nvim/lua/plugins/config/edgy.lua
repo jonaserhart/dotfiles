@@ -58,6 +58,11 @@ return {
         open = "Neotest summary open",
         size = { width = 0.25 },
       },
+      {
+        title = "Symbols",
+        ft = "sagaoutline",
+        open = "Lspsaga outline"
+      }
     }
   },
 }

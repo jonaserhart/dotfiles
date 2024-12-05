@@ -9,6 +9,7 @@
 
 /.config/*
 !/.config/nvim/
+!/.config/fish/
 /.config/nvim/lua/custom/**/*
 
 /**/.DS_Store

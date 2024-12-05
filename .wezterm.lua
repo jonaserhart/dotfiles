@@ -3,8 +3,7 @@ local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 -- Font
 config.font = wezterm.font({
-  family = "Monaspace Neon",
-  weight = "Medium",
+  family = "Go Mono for Powerline",
   harfbuzz_features = {
     -- "cv01", ---styles: a
     -- "cv02", ---styles: g

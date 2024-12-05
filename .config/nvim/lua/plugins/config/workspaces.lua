@@ -3,7 +3,7 @@ return {
   config = function()
     require("workspaces").setup({
       hooks = {
-        open = { "Telescope git_worktree" },
+        open = { "Telescope find_files " },
       }
     })
   end

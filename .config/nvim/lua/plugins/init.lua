@@ -7,7 +7,6 @@ return {
   { "nvim-lualine/lualine.nvim",               import = "plugins.config.statusline" },
   { "rcarriga/nvim-notify",                    import = "plugins.config.notify" },
   { "nvim-neo-tree/neo-tree.nvim",             import = "plugins.config.tree" },
-  { "filipdutescu/renamer.nvim",               import = "plugins.config.renamer" },
   { "nvim-telescope/telescope.nvim",           import = "plugins.config.telescope" },
   { "nvim-telescope/telescope-ui-select.nvim", import = "plugins.config.telescope-ui-select" },
   { "rachartier/tiny-code-action.nvim",        import = "plugins.config.tiny-code-action" },
@@ -25,6 +24,7 @@ return {
   { "mfussenegger/nvim-dap",                   import = "plugins.config.debug" },
   { "williamboman/mason-lspconfig.nvim",       import = "plugins.config.mason-lspconfig" },
   { "ThePrimeagen/refactoring.nvim",           import = "plugins.config.refactoring" },
+  { "nvimdev/lspsaga.nvim",                    import = "plugins.config.lspsaga" },
 
   -- Formatting
   { "nvim-treesitter/nvim-treesitter",         import = "plugins.config.treesitter" },
