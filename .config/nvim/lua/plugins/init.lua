@@ -12,6 +12,7 @@ return {
   { "rachartier/tiny-code-action.nvim",        import = "plugins.config.tiny-code-action" },
   { "folke/trouble.nvim",                      import = "plugins.config.trouble" },
   { "folke/edgy.nvim",                         import = "plugins.config.edgy" },
+  { "folke/todo-comments.nvim",                import = "plugins.config.todo" },
 
 
   -- Completion
@@ -23,8 +24,10 @@ return {
   { "andythigpen/nvim-coverage",               import = "plugins.config.code-coverage" },
   { "mfussenegger/nvim-dap",                   import = "plugins.config.debug" },
   { "williamboman/mason-lspconfig.nvim",       import = "plugins.config.mason-lspconfig" },
-  { "ThePrimeagen/refactoring.nvim",           import = "plugins.config.refactoring" },
   { "nvimdev/lspsaga.nvim",                    import = "plugins.config.lspsaga" },
+
+  -- Refactoring
+  { "ThePrimeagen/refactoring.nvim",           import = "plugins.config.refactoring" },
 
   -- Formatting
   { "nvim-treesitter/nvim-treesitter",         import = "plugins.config.treesitter" },

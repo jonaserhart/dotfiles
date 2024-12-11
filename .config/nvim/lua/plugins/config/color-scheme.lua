@@ -5,7 +5,7 @@ return {
     config = function()
       require("nordic").setup({
       })
-      vim.cmd("colorscheme nordic")
+      -- vim.cmd("colorscheme nordic")
     end,
   },
   {
@@ -58,5 +58,29 @@ return {
     },
     lazy = false,
     priority = 1000,
+  },
+  {
+    "vague2k/vague.nvim",
+    config = function()
+      require("vague").setup({
+      })
+    end
+  },
+  {
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {},
+    config = function()
+      -- vim.cmd("colorscheme tokyonight-storm")
+    end
+  },
+  {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    priority = 1000,
+    config = function()
+      vim.cmd("colorscheme catppuccin-frappe")
+    end
   }
 }

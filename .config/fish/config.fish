@@ -10,7 +10,10 @@ set -U fish_user_paths "/opt/homebrew/bin" $fish_user_paths
 set -g theme_nerd_fonts yes
 set -g theme_color_scheme nord
 
+set -g EDITORi VIM
+
 
 alias k="kubectl"
 alias lsl="ls -l"
+alias git-cap="git commit --amend --no-edit && git push -f"
 
