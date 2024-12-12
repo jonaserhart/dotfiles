@@ -9,14 +9,15 @@ return {
   { "nvim-neo-tree/neo-tree.nvim",             import = "plugins.config.tree" },
   { "nvim-telescope/telescope.nvim",           import = "plugins.config.telescope" },
   { "nvim-telescope/telescope-ui-select.nvim", import = "plugins.config.telescope-ui-select" },
-  { "rachartier/tiny-code-action.nvim",        import = "plugins.config.tiny-code-action" },
   { "folke/trouble.nvim",                      import = "plugins.config.trouble" },
   { "folke/edgy.nvim",                         import = "plugins.config.edgy" },
   { "folke/todo-comments.nvim",                import = "plugins.config.todo" },
+  { "s1n7ax/nvim-window-picker",               import = "plugins.config.windowpicker" },
 
 
   -- Completion
   { "hrsh7th/nvim-cmp",                        import = "plugins.config.completions" },
+  { "windwp/nvim-autopairs",                   import = "plugins.config.autopairs" },
 
   -- Core LSP, DAP and Testing frameworks
   { "neovim/nvim-lspconfig",                   import = "plugins.config.lsp" },
