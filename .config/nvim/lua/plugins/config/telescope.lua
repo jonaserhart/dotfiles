@@ -19,5 +19,6 @@ return {
     vim.keymap.set('n', '<leader>ls', builtin.lsp_document_symbols, {})
     vim.keymap.set('n', '<leader>lw', builtin.lsp_dynamic_workspace_symbols, {})
     vim.keymap.set('n', '<leader>tb', ':Telescope buffers<CR>', { noremap = true, desc = 'Cmdline' })
+    vim.keymap.set('n', '<leader><leader>', ':Telescope cmdline<CR>', { noremap = true, desc = 'Cmdline' })
   end
 }
