@@ -28,6 +28,16 @@ return {
         size = { height = 0.4 },
         ft = "trouble",
       },
+      {
+        title = "Debug console",
+        ft = "dap-repl",
+        size = { height = 0.33 },
+      },
+      {
+        title = "Locals",
+        ft = "dapui_scopes",
+        size = { height = 0.33 },
+      },
     },
     left = {
       -- Neo-tree filesystem always takes half the screen height
@@ -50,6 +60,21 @@ return {
         open = "Neotree position=right git_status",
       },
       "neo-tree",
+      {
+        title = "Watches",
+        ft = "dapui_watches",
+        size = { width = 0.15 },
+      },
+      {
+        title = "Stacks",
+        ft = "dapui_stacks",
+        size = { width = 0.15 },
+      },
+      {
+        title = "Breakpoints",
+        ft = "dapui_breakpoints",
+        size = { width = 0.15 },
+      }
     },
     right = {
       {

@@ -44,8 +44,8 @@ function M.setup()
           {
             title = GOTEST_ACTION_TITLE,
             action = function()
-              vim.cmd(":GoUnit")
-              vim.notify("Generated test for " .. func_name, vim.log.levels.INFO)
+              local output = vim.api.nvim_command_output(":GoUnit")
+              vim.notify(output)
             end,
           },
         }

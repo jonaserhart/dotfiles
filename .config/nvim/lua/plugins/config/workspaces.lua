@@ -3,7 +3,11 @@ return {
   config = function()
     require("workspaces").setup({
       hooks = {
-        open = { "Telescope find_files " },
+        open = function ()
+
+          vim.api.nvim_exec_autocmds("User", { pattern = "WorkspacesOpen" })
+          vim.cmd("Telescope find_files")
+        end
       }
     })
   end

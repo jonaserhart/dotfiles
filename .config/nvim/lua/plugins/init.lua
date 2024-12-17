@@ -54,4 +54,7 @@ return {
   -- Language-specific
   { import = "plugins.languages.go.plugins" },
   { import = "plugins.languages.helm.plugins" },
+
+  -- Util
+  { "willothy/wezterm.nvim",                   import = "plugins.config.wezterm" }
 }
