@@ -13,6 +13,7 @@ return {
   { "folke/edgy.nvim",                         import = "plugins.config.edgy" },
   { "folke/todo-comments.nvim",                import = "plugins.config.todo" },
   { "s1n7ax/nvim-window-picker",               import = "plugins.config.windowpicker" },
+  { "OXY2DEV/markview.nvim",            import = "plugins.config.markdown-preview" },
 
 
   -- Completion
