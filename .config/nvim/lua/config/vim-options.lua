@@ -6,7 +6,7 @@ vim.cmd("set shiftwidth=2")
 vim.cmd("set number")
 -- vim.cmd("set fillchars+=vert:\\ ")
 vim.cmd("nnoremap <SPACE> <Nop>")
-vim.cmd("tnoremap <ESC> <C-\\><C-n>")
+vim.cmd("tnoremap <ESC><ESC> <C-\\><C-n>")
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 vim.g.mapleader = " "
