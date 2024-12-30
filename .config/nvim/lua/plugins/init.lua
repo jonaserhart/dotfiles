@@ -13,7 +13,7 @@ return {
   { "folke/edgy.nvim",                         import = "plugins.config.edgy" },
   { "folke/todo-comments.nvim",                import = "plugins.config.todo" },
   { "s1n7ax/nvim-window-picker",               import = "plugins.config.windowpicker" },
-  { "OXY2DEV/markview.nvim",            import = "plugins.config.markdown-preview" },
+  { "OXY2DEV/markview.nvim",                   import = "plugins.config.markdown-preview" },
 
 
   -- Completion
@@ -39,7 +39,7 @@ return {
   { "sindrets/diffview.nvim",                  import = "plugins.config.diffview" },
   { "lewis6991/gitsigns.nvim",                 import = "plugins.config.gitsigns" },
   { "FabijanZulj/blame.nvim",                  import = "plugins.config.blame" },
-  { "ThePrimeagen/git-worktree.nvim",          import = "plugins.config.gitworktree" },
+  { "NeogitOrg/neogit",                        import = "plugins.config.neogit" },
 
   -- Binaries
   { "williamboman/mason.nvim",                 import = "plugins.config.mason" },
@@ -51,6 +51,7 @@ return {
 
   -- Terminal
   { "akinsho/toggleterm.nvim",                 import = "plugins.config.terminal" },
+  { "voldikss/vim-floaterm",                   import = "plugins.config.floatterm" },
 
   -- Language-specific
   { import = "plugins.languages.go.plugins" },
