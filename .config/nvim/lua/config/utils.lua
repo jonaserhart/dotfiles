@@ -8,7 +8,8 @@ local req_custom_module = function(modulesubpath)
 			return nil
 		end
 	else
-		vim.notify("Could ont read custom module '" .. modulesubpath .. "' no NVIMENV found.", vim.log.levels.ERROR)
+		vim.notify("Could ont read custom module '" .. modulesubpath .. "' no NVIMENV found.", vim.log.levels.WARN)
+		return nil
 	end
 end
 
@@ -26,7 +27,8 @@ local get_custom_config = function(key, default)
 			return default
 		end
 	else
-		vim.notify("Could not read custom config key '" .. key .. "' no NVIMENV found.", vim.log.levels.ERROR)
+		vim.notify("Could not read custom config key '" .. key .. "' no NVIMENV found.", vim.log.levels.WARN)
+		return default
 	end
 end
 
