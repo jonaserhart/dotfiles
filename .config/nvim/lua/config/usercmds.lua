@@ -24,8 +24,11 @@ return {
     orgmode_usercmds()
 
     vim.api.nvim_create_user_command("LazyGit", function()
-      vim.cmd("FloatermNew --height=0.9 --width=0.9 --wintype=float --name=lazygit --autoclose=2 lazygit")
+      local w = require("wezterm")
+      w.spawn("lazygit", { new_window = true, cwd = vim.fn.getcwd()})
+      -- vim.cmd("FloatermNew --height=0.9 --width=0.9 --wintype=float --name=lazygit --autoclose=2 lazygit")
     end, {})
+
 
     -- load custom autocmds by environment
     local customcmds = require("config.utils").req_custom_module("usercmds")
