@@ -62,8 +62,9 @@ return {
       {
         title = "Git",
         ft = "neo-tree",
-        filter = function(buf)
+        filter = function(buf, win)
           return vim.b[buf].neo_tree_source == "git_status"
+              and vim.api.nvim_win_get_config(win).relative == ""
         end,
         open = "Neotree git_status reveal left",
         size = { height = 0.5, width = 0.15 },
