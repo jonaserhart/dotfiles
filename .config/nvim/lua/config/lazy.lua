@@ -13,3 +13,6 @@ end
 vim.opt.rtp:prepend(lazyPath)
 
 require("lazy").setup("plugins")
+
+-- set up languages
+require("plugins.config.languages.setup_languages").setup()

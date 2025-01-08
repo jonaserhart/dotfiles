@@ -23,7 +23,6 @@ return {
     vim.api.nvim_create_autocmd("User", {
       pattern = "WorkspacesOpen",
       callback = function()
-        vim.notify("Workspace opened")
         local gotest = {
           go_test_args = {
             "-v",

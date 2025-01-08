@@ -10,7 +10,7 @@ vim.cmd("tnoremap <ESC><ESC> <C-\\><C-n>")
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 vim.g.mapleader = " "
-vim.cmd("set clipboard+=unnamedplus")
+-- vim.cmd("set clipboard+=unnamedplus")
 vim.cmd("imap <silent><expr> <Tab> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>'")
 
 -- DAP breakpoint symbols

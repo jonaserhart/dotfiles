@@ -71,7 +71,5 @@ return {
 			dapui.open()
 			vim.cmd("Neotree close")
 		end
-
-		require("plugins.languages.csharp.config.dap").setup()
 	end,
 }

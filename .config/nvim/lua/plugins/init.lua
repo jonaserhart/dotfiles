@@ -26,7 +26,8 @@ return {
   { "mfussenegger/nvim-dap",                    import = "plugins.config.debug" },
   { "williamboman/mason-lspconfig.nvim",        import = "plugins.config.mason-lspconfig" },
   { "nvimdev/lspsaga.nvim",                     import = "plugins.config.lspsaga" },
-  { "obarbier/sonarlint.nvim",                  import = "plugins.config.sonar" },
+  { "sonarlint.nvim",                           import = "plugins.config.sonar" },
+
 
   -- Refactoring
   { "ThePrimeagen/refactoring.nvim",            import = "plugins.config.refactoring" },
@@ -54,10 +55,10 @@ return {
   { "voldikss/vim-floaterm",                    import = "plugins.config.floatterm" },
 
   -- Language-specific
-  { import = "plugins.languages.go.plugins" },
-  { import = "plugins.languages.csharp.plugins" },
-  { import = "plugins.languages.helm.plugins" },
-  { import = "plugins.languages.rust.plugins" },
+  { import = "plugins.config.languages.go.plugins" },
+  { import = "plugins.config.languages.csharp.plugins" },
+  { import = "plugins.config.languages.helm.plugins" },
+  { import = "plugins.config.languages.rust.plugins" },
 
   -- Util
   { "willothy/wezterm.nvim",                    import = "plugins.config.wezterm" },

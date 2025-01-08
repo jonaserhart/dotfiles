@@ -1,25 +1,37 @@
 return {
-  "obarbier/sonarlint.nvim",
+  url = "https://gitlab.com/schrieveslaach/sonarlint.nvim",
+  ft = { "go" },
+  dependencies = {
+    "williamboman/mason.nvim"
+  },
   config = function()
-    require("sonarlint").setup({
+    require('sonarlint').setup({
       server = {
         cmd = {
-          "sonarlint-language-server",
-          -- Ensure that sonarlint-language-server uses stdio channel
-          "-stdio",
-          "-analyzers",
-          -- paths to the analyzers you need, using those for python and java in this example
+          'sonarlint-language-server',
+          '-stdio',
+          '-analyzers',
           vim.fn.expand("$MASON/share/sonarlint-analyzers/sonargo.jar"),
-          vim.fn.expand("$MASON/share/sonarlint-analyzers/sonarcsharp.jar"),
-          vim.fn.expand("$MASON/share/sonarlint-analyzers/sonarjs.jar"),
         },
+        settings = {
+          sonarlint = {
+            rules = {
+              ["go:S1314"] = { level = "on" },
+              ["go:S131"] = { level = "on" },
+              ["go:S134"] = { level = "on" },
+              ["go:S138"] = { level = "on" },
+              ["go:S1821"] = { level = "on" },
+              ["go:S1067"] = { level = "on" },
+              ["go:S122"] = { level = "on" },
+              ["go:S104"] = { level = "on" },
+            }
+          }
+        }
       },
       filetypes = {
         -- Tested and working
-        "go",
-        "cs",
-        "js",
-      },
+        'go',
+      }
     })
-  end,
+  end
 }

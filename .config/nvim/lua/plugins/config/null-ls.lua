@@ -27,14 +27,6 @@ return {
 			end,
 		})
 
-		require("plugins.languages.go.config.nullls").setup()
-
-		require("plugins.languages.typescript.config.formatting").setup()
-		require("plugins.languages.typescript.config.diagnostics").setup()
-		require("plugins.languages.typescript.config.code-actions").setup()
-
-		require("plugins.languages.lua.config.formatting").setup()
-
 		-- common builtins
 		null_ls.register({
 			null_ls.builtins.diagnostics.semgrep,
