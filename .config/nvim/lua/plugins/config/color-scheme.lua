@@ -1,9 +1,9 @@
 return {
   {
-    'projekt0n/github-nvim-theme',
-    name = 'github-theme',
-    lazy = false,    -- make sure we load this during startup if it is your main colorscheme
-    priority = 1000, -- make sure to load this before all the other start plugins
+    "projekt0n/github-nvim-theme",
+    name = "github-theme",
+    lazy = false,
+    priority = 1000,
     config = function()
       -- vim.cmd('colorscheme github_dark')
     end,
@@ -12,8 +12,7 @@ return {
     "AlexvZyl/nordic.nvim",
     priority = 1000,
     config = function()
-      require("nordic").setup({
-      })
+      require("nordic").setup({})
       -- vim.cmd("colorscheme nordic")
     end,
   },
@@ -37,27 +36,26 @@ return {
     "ilof2/posterpole.nvim",
     priority = 1000,
     config = function()
-      require("posterpole").setup({
-      })
+      require("posterpole").setup({})
       -- vim.cmd("colorscheme posterpole")
-    end
+    end,
   },
   {
-    'shawilly/ponokai',
+    "shawilly/ponokai",
     lazy = false,
     priority = 1000,
     config = function()
       -- vim.cmd.colorscheme('ponokai')
-    end
+    end,
   },
   {
-    'olivercederborg/poimandres.nvim',
+    "olivercederborg/poimandres.nvim",
     lazy = false,
     priority = 1000,
     config = function()
-      require('poimandres').setup {
+      require("poimandres").setup({
         -- vim.cmd("colorscheme poimandres")
-      }
+      })
     end,
   },
   {
@@ -71,9 +69,8 @@ return {
   {
     "vague2k/vague.nvim",
     config = function()
-      require("vague").setup({
-      })
-    end
+      require("vague").setup({})
+    end,
   },
   {
     "folke/tokyonight.nvim",
@@ -82,7 +79,7 @@ return {
     opts = {},
     config = function()
       -- vim.cmd("colorscheme tokyonight-storm")
-    end
+    end,
   },
   {
     "catppuccin/nvim",
@@ -93,43 +90,23 @@ return {
         no_italic = true,
         term_colors = true,
         transparent_background = false,
-        styles = {
-          comments = {},
-          conditionals = {},
-          loops = {},
-          functions = {},
-          keywords = {},
-          strings = {},
-          variables = {},
-          numbers = {},
-          booleans = {},
-          properties = {},
-          types = {},
-        },
-        color_overrides = {
-          mocha = {
-            base = "#000000",
-            mantle = "#000000",
-            crust = "#000000",
-          }
-        },
+        color_overrides = {},
         integrations = {
-          telescope = {
-            enabled = true,
-            style = "nvchad",
-          },
-          dropbar = {
-            enabled = true,
-            color_mode = true,
-          },
+          telescope = true,
+          native_lsp = true,
+          treesitter = true,
+          gitsigns = true,
+          neotree = true,
+          cmp = true,
+          markdown = true,
         },
       })
       vim.cmd("colorscheme catppuccin")
-    end
+    end,
   },
   {
     "philosofonusus/morta.nvim",
-    name = 'morta',
+    name = "morta",
     priority = 1000,
     opts = {},
     config = function()
@@ -138,11 +115,11 @@ return {
   },
   {
     "Mofiqul/vscode.nvim",
-    name = 'vscode',
+    name = "vscode",
     priority = 1000,
     opts = {},
     config = function()
       -- vim.cmd.colorscheme 'vscode'
     end,
-  }
+  },
 }

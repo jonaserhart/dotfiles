@@ -6,8 +6,13 @@ return {
     vim.opt.splitkeep = "screen"
   end,
   opts = {
+    icons = {
+      closed = "",
+      open = "",
+    },
     bottom = {
       {
+        title = "Terminal",
         ft = "toggleterm",
         size = { height = 0.4 },
         -- exclude floating windows
@@ -25,6 +30,7 @@ return {
         end,
       },
       {
+        title = "Diagnostics",
         size = { height = 0.4 },
         ft = "trouble",
       },
@@ -43,14 +49,18 @@ return {
       -- Neo-tree filesystem always takes half the screen height
       {
         title = "Neo-Tree",
+        wo = {
+          winbar = false,
+        },
         ft = "neo-tree",
         filter = function(buf, win)
-          return vim.b[buf].neo_tree_source == "filesystem" and vim.api.nvim_win_get_config(win).relative == ""
+          return vim.b[buf].neo_tree_source == "filesystem"
+              and vim.api.nvim_win_get_config(win).relative == ""
         end,
         size = { height = 0.5, width = 0.15 },
       },
       {
-        title = "Neo-Tree Git",
+        title = "Git",
         ft = "neo-tree",
         filter = function(buf)
           return vim.b[buf].neo_tree_source == "git_status"
@@ -72,7 +82,7 @@ return {
         title = "Breakpoints",
         ft = "dapui_breakpoints",
         size = { width = 0.15 },
-      }
+      },
     },
     right = {
       {
@@ -84,8 +94,8 @@ return {
       {
         title = "Symbols",
         ft = "sagaoutline",
-        open = "Lspsaga outline"
+        open = "Lspsaga outline",
       },
-    }
+    },
   },
 }
