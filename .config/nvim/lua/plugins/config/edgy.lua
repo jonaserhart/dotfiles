@@ -60,7 +60,9 @@ return {
         size = { height = 0.5, width = 0.15 },
       },
       {
-        title = "Git",
+        wo = {
+          winbar = false,
+        },
         ft = "neo-tree",
         filter = function(buf, win)
           return vim.b[buf].neo_tree_source == "git_status"
