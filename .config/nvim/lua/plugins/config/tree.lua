@@ -13,7 +13,9 @@ return {
         commands = {
           difffile = function(state)
             cc.open(state)
-            vim.cmd("Gitsigns diffthis")
+            vim.schedule(function()
+              vim.cmd("Gitsigns diffthis")
+            end)
           end,
         },
         window = {
