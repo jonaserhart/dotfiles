@@ -7,6 +7,7 @@ return {
     "MunifTanjim/nui.nvim",
   },
   config = function()
+    local cc = require("neo-tree.sources.common.commands")
     require("neo-tree").setup({
       hide_root_node = true,
       filesystem = {
