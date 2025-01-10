@@ -76,7 +76,7 @@ config.font = wezterm.font_with_fallback({
       -- "ss10", ---styles: Fl Tl fi fj fl ft
       -- "onum", ---styles: 1234567890
     },
-  }
+  },
 })
 
 config.font_size = 14
@@ -101,6 +101,7 @@ config.window_padding = {
   bottom = 0,
 }
 
+config.line_height = 1.3
 -- Keys
 
 config.send_composed_key_when_left_alt_is_pressed = true

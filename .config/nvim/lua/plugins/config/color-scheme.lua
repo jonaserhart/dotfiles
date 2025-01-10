@@ -17,11 +17,23 @@ return {
     end,
   },
   {
-    "olimorris/onedarkpro.nvim",
+    "navarasu/onedark.nvim",
     priority = 1000,
     config = function()
-      require("onedarkpro").setup()
-      -- vim.cmd("colorscheme onedark")
+      require("onedark").setup()
+
+      vim.api.nvim_create_autocmd("ColorScheme", {
+        callback = function()
+          -- Set folder and file icon colors
+          vim.api.nvim_set_hl(0, "NeoTreeFileIcon", { fg = "#A9AFBC" })
+          vim.api.nvim_set_hl(0, "NeoTreeDirectoryIcon", { fg = "#A9AFBC" })
+          vim.api.nvim_set_hl(0, "NeoTreeWinSeparator", { link = "Normal" })
+          vim.api.nvim_set_hl(0, "NeoTreeNormalNC", { bg = "#2F343E" })
+          vim.api.nvim_set_hl(0, "NeoTreeNormal", { bg = "#2F343E" })
+          vim.api.nvim_set_hl(0, "DevIconDefault", { fg = "#A9AFBC" })
+        end,
+      })
+      vim.cmd("colorscheme onedark")
     end,
   },
   {
@@ -101,7 +113,7 @@ return {
           markdown = true,
         },
       })
-      vim.cmd("colorscheme catppuccin")
+      -- vim.cmd("colorscheme catppuccin")
     end,
   },
   {

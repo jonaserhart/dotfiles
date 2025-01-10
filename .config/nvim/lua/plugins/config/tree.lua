@@ -8,6 +8,7 @@ return {
   },
   config = function()
     require("neo-tree").setup({
+      hide_root_node = true,
       filesystem = {
         filtered_items = {
           hide_dotfiles = false,
@@ -31,21 +32,38 @@ return {
           noremap = true,
           nowait = true,
         },
+        mappings = {
+          ["<space>"] = "none",
+        },
       },
-      renderer = {
-        icons = {
-          glyphs = {
-            folder = {
-              arrow_closed = "",
-              arrow_open = "",
-              default = " ",
-              open = " ",
-              empty = " ",
-              empty_open = " ",
-              symlink = " ",
-              symlink_open = " ",
-            },
-          },
+      default_component_configs = {
+        indent = {
+          with_expanders = true,
+          expander_collapsed = "",
+          expander_expanded = "",
+          expander_highlight = "NeoTreeExpander",
+          padding = 0,
+        },
+
+        icon = {
+          folder_closed = " ",
+          folder_open = "󰝰 ",
+          folder_empty = " ",
+          provider = function(icon, node, state) -- default icon provider utilizes nvim-web-devicons if available
+            if node.type == "file" or node.type == "terminal" then
+              local success, web_devicons = pcall(require, "nvim-web-devicons")
+              local name = node.type == "terminal" and "terminal" or node.name
+              if success then
+                local devicon, hl = web_devicons.get_icon(name)
+                icon.text = devicon or icon.text
+                icon.highlight = hl or icon.highlight
+              end
+            end
+          end,
+          -- The next two settings are only a fallback, if you use nvim-web-devicons and configure default icons there
+          -- then these will never be used.
+          default = "*",
+          highlight = "NeoTreeFileIcon",
         },
       },
     })

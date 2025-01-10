@@ -11,13 +11,14 @@ return {
             text = function()
               return vim.fn.getcwd()
             end,
-            highlight = "Directory",
-            text_align = "left"
+            highlight = "NeoTreeNormal",
+            text_align = "left",
           },
         },
         diagnostics = "nvim_lsp",
-        separator_style = { "", "" },
         modified_icon = "●",
+        separator_style = "slant",
+        color_icons = true,
         show_close_icon = false,
         show_buffer_close_icons = false,
       },
