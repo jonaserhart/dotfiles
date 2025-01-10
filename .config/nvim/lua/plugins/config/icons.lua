@@ -1,20 +1,25 @@
 return {
   "nvim-tree/nvim-web-devicons",
+  priority = 1000,
   config = function()
     require("nvim-web-devicons").setup({
-      override = {
-        -- This will force ALL icons to use #A9AFBC
-        default_icon = {
-          icon = "",
-          name = "Default",
-          color = "#A9AFBC",
-        },
-      },
+      -- override = {
+      --   default_icon = {
+      --     icon = "",
+      --     name = "Default",
+      --     color = "#A9AFBC",
+      --   },
+      --   go = {
+      --     icon = "",
+      --     color = "#7dcfff",
+      --     name = "Go",
+      --   },
+      -- },
       default = true,
-      color_icons = false,
+      color_icons = true,
       strict = true,
       override_by_filename = {},
       override_by_extension = {},
     })
-  end,
+  end
 }

@@ -9,7 +9,8 @@ return {
           {
             filetype = "neo-tree",
             text = function()
-              return vim.fn.getcwd()
+              local path = "󰝰 " .. vim.fn.getcwd()
+              return path
             end,
             highlight = "NeoTreeNormal",
             text_align = "left",
@@ -17,10 +18,9 @@ return {
         },
         diagnostics = "nvim_lsp",
         modified_icon = "●",
-        separator_style = "slant",
-        color_icons = true,
-        show_close_icon = false,
-        show_buffer_close_icons = false,
+        separator_style = "",
+        show_close_icon = true,
+        show_buffer_close_icons = true,
       },
     })
 

@@ -2,37 +2,52 @@ return {
   "nvimdev/dashboard-nvim",
   event = "VimEnter",
   config = function()
+    local version = vim.version()
+    local versionString = string.format("NeoVim v%s.%s.%s", version.major, version.minor, version.patch)
     require("dashboard").setup({
-      theme = "hyper",
+      theme = "doom",
       config = {
-        week_header = {
-          enable = true,
+        header = {
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          versionString,
+          "",
+          os.date("󰥔  %d. %m. %Y %H:%M:%S"),
+          "",
+          "",
+          "",
         },
-        shortcut = {
+        center = {
           {
-            desc = "  Agenda",
-            group = "@property",
-            action = "AgendaDay",
-            key = "a"
-          },
-          {
-            desc = "  Open a workspace",
-            group = "Number",
+            icon = " ",
+            icon_hl = "Title",
+            desc = "Open a workspace",
+            desc_hl = "String",
+            key_hl = "Number",
             action = "WorkspacesOpen",
             key = "w",
+            key_format = ' %s'
+            -- keymap = "w",
           },
           {
-            desc = "  Org",
-            group = "@method",
-            action = "Telescope orgmode search_headings",
-            key = "n",
+            icon = " ",
+            icon_hl = "Title",
+            desc = "Settings",
+            desc_hl = "String",
+            key_hl = "Number",
+            action = "WorkspacesOpen nvim",
+            key = "c",
+            key_format = ' %s'
+            -- keymap = "c",
           },
         },
-        packages = { enable = true },
-        project = { enable = true, },
-        mru = { enable = false },
-        footer = {},
-      },
+      }
     })
   end,
   dependencies = { { "nvim-tree/nvim-web-devicons" } },

@@ -7,7 +7,6 @@ return {
     "MunifTanjim/nui.nvim",
   },
   config = function()
-    local cc = require("neo-tree.sources.common.commands")
     require("neo-tree").setup({
       hide_root_node = true,
       filesystem = {
@@ -20,7 +19,7 @@ return {
           },
         },
         follow_current_file = {
-          enabled = true,     -- This will find and focus the file in the active buffer every time
+          enabled = true,          -- This will find and focus the file in the active buffer every time
           --               -- the current file is changed while the tree is open.
           leave_dirs_open = false, -- `false` closes auto expanded dirs, such as with `:Neotree reveal`
         },
@@ -28,7 +27,6 @@ return {
       window = {
         position = "left",
         width = 30,
-        popup_border_style = "single",
         mapping_options = {
           noremap = true,
           nowait = true,
@@ -50,6 +48,7 @@ return {
           folder_closed = " ",
           folder_open = "󰝰 ",
           folder_empty = " ",
+          go = " ",
           provider = function(icon, node, state) -- default icon provider utilizes nvim-web-devicons if available
             if node.type == "file" or node.type == "terminal" then
               local success, web_devicons = pcall(require, "nvim-web-devicons")

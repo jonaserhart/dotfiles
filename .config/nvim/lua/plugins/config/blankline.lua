@@ -6,6 +6,9 @@ return {
       char = "│",
       highlight = "LineNr",
     },
+    exclude = {
+      filetypes = { "dashboard", "neo-tree" }
+    },
     scope = {
       enabled = true,
       show_start = false,
