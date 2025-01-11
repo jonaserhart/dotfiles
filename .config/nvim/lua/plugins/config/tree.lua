@@ -8,8 +8,8 @@ return {
   },
   config = function()
     require("neo-tree").setup({
-      hide_root_node = true,
       filesystem = {
+        hide_root_node = true,
         filtered_items = {
           hide_dotfiles = false,
           hide_gitignored = false,
@@ -48,7 +48,6 @@ return {
           folder_closed = " ",
           folder_open = "󰝰 ",
           folder_empty = " ",
-          go = " ",
           provider = function(icon, node) -- default icon provider utilizes nvim-web-devicons if available
             if node.type == "file" or node.type == "terminal" then
               local success, web_devicons = pcall(require, "nvim-web-devicons")

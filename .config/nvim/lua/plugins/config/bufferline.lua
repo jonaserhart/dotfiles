@@ -8,13 +8,9 @@ return {
         offsets = {
           {
             filetype = "neo-tree",
-            text = function()
-              local dirname = string.gsub(vim.fn.getcwd(), "(.*/)(.*)", "%2")
-              local path = "󰝰 " .. dirname
-              return path
-            end,
+            text = "Filesystem",
             highlight = "Title",
-            text_align = "left",
+            text_align = "center",
           },
         },
         diagnostics = "nvim_lsp",

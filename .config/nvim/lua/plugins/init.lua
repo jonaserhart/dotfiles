@@ -17,6 +17,7 @@ return {
   { "lukas-reineke/indent-blankline.nvim",             import = "plugins.config.blankline" },
   { "nvim-tree/nvim-web-devicons",                     import = "plugins.config.icons" },
   { "mvllow/modes.nvim",                               import = "plugins.config.modes" },
+  { "rachartier/tiny-code-action.nvim",                import = "plugins.config.tiny-ca" },
 
   -- Completion
   { "hrsh7th/nvim-cmp",                                import = "plugins.config.completions" },
