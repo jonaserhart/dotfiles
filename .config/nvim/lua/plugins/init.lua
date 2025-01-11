@@ -54,7 +54,6 @@ return {
 
   -- Terminal
   { "akinsho/toggleterm.nvim",                         import = "plugins.config.terminal" },
-  { "voldikss/vim-floaterm",                           import = "plugins.config.floatterm" },
 
   -- Language-specific
   { import = "plugins.config.languages.go.plugins" },

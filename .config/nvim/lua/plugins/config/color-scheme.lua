@@ -31,6 +31,7 @@ return {
           vim.api.nvim_set_hl(0, "NeoTreeNormalNC", { bg = "#2F343E" })
           vim.api.nvim_set_hl(0, "NeoTreeNormal", { bg = "#2F343E" })
           vim.api.nvim_set_hl(0, "DevIconDefault", { fg = "#A9AFBC" })
+          vim.api.nvim_set_hl(0, "NeoTreeGitUnstaged", { bg = "#2F343E", fg = "#FF6D6A" })
         end,
       })
       vim.cmd("colorscheme onedark")

@@ -9,10 +9,11 @@ return {
           {
             filetype = "neo-tree",
             text = function()
-              local path = "󰝰 " .. vim.fn.getcwd()
+              local dirname = string.gsub(vim.fn.getcwd(), "(.*/)(.*)", "%2")
+              local path = "󰝰 " .. dirname
               return path
             end,
-            highlight = "NeoTreeNormal",
+            highlight = "Title",
             text_align = "left",
           },
         },

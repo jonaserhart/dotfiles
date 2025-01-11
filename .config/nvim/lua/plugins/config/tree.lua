@@ -19,7 +19,7 @@ return {
           },
         },
         follow_current_file = {
-          enabled = true,          -- This will find and focus the file in the active buffer every time
+          enabled = true,     -- This will find and focus the file in the active buffer every time
           --               -- the current file is changed while the tree is open.
           leave_dirs_open = false, -- `false` closes auto expanded dirs, such as with `:Neotree reveal`
         },
@@ -49,7 +49,7 @@ return {
           folder_open = "󰝰 ",
           folder_empty = " ",
           go = " ",
-          provider = function(icon, node, state) -- default icon provider utilizes nvim-web-devicons if available
+          provider = function(icon, node) -- default icon provider utilizes nvim-web-devicons if available
             if node.type == "file" or node.type == "terminal" then
               local success, web_devicons = pcall(require, "nvim-web-devicons")
               local name = node.type == "terminal" and "terminal" or node.name

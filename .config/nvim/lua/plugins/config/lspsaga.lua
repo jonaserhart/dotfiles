@@ -1,10 +1,7 @@
 return {
-  'nvimdev/lspsaga.nvim',
+  "nvimdev/lspsaga.nvim",
   config = function()
-    require('lspsaga').setup({
-      ui = {
-        code_action = " "
-      },
+    require("lspsaga").setup({
       lightbulb = {
         -- enable = false
         virtual_text = false,
@@ -13,8 +10,8 @@ return {
         enable = true,
         sign = true,
         virtual_text = true,
-        priority = 100
-      }
+        priority = 100,
+      },
     })
 
     vim.keymap.set("n", "<leader>ic", ":Lspsaga incoming_calls<cr>", {})
@@ -32,7 +29,7 @@ return {
     vim.keymap.set("n", "<leader>rn", ":Lspsaga rename<cr>", {})
   end,
   dependencies = {
-    'nvim-treesitter/nvim-treesitter',
-    'nvim-tree/nvim-web-devicons',
-  }
+    "nvim-treesitter/nvim-treesitter",
+    "nvim-tree/nvim-web-devicons",
+  },
 }
