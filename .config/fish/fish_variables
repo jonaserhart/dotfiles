@@ -1,6 +1,5 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
-SETUVAR --export NVIMENV:private
 SETUVAR __fish_initialized:3400
 SETUVAR fish_color_autosuggestion:brblack
 SETUVAR fish_color_cancel:\x2dr
@@ -30,4 +29,4 @@ SETUVAR fish_pager_color_description:yellow\x1e\x2di
 SETUVAR fish_pager_color_prefix:normal\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
 SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
 SETUVAR fish_pager_color_selected_background:\x2dr
-SETUVAR fish_user_paths:/opt/homebrew/bin\x1e/Users/jonaserhart/\x2erd/bin\x1e/Users/jonaserhart/go/bin\x1e/usr/local/bin\x1e/Users/jonas\x2eerhart/\x2erd/bin\x1e/Users/jonas\x2eerhart/go/bin
+SETUVAR fish_user_paths:/opt/homebrew/bin\x1e/Users/jonas\x2eerhart/\x2erd/bin\x1e/Users/jonas\x2eerhart/go/bin\x1e/usr/local/bin

@@ -5,7 +5,7 @@ set -U fish_user_paths "$HOME/go/bin" $fish_user_paths
 set -U fish_user_paths "$HOME/.rd/bin" $fish_user_paths
 set -U fish_user_paths "/opt/homebrew/bin" $fish_user_paths
 
-[ ! -f ~/.env ] || source ~/.env
+[ ! -f ~/.profile.fish ] || source ~/.profile.fish
 
 set -g theme_nerd_fonts yes
 set -g theme_color_scheme nord
@@ -16,6 +16,13 @@ set -g EDITORi VIM
 alias k="kubectl"
 alias lsl="ls -l"
 alias git-cap="git commit --amend --no-edit && git push -f"
+
+function nvm
+  bass source (brew --prefix nvm)/nvm.sh --no-use ';' nvm $argv
+end
+
+set -x NVM_DIR ~/.nvm
+nvm use default --silent
 
 function fish_greeting
 	set greetings \
@@ -35,3 +42,7 @@ function fish_greeting
 	printf "  %s\n" $chosen_msg
   printf "-----------------------------------------------------------\n"
 end
+
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+set --export --prepend PATH "/Users/jonas.erhart/.rd/bin"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)

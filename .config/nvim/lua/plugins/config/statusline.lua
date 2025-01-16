@@ -15,7 +15,7 @@ return {
           "orgagenda",
           winbar = { "NvimTree" },
         },
-        theme = "auto",
+        theme = "onedark",
       },
       sections = {
         -- lualine_a = { { "mode", separator = { left = "" }, right_padding = 2 } },
