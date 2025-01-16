@@ -51,7 +51,7 @@ config.font_size = 14
 config.hide_tab_bar_if_only_one_tab = true
 
 -- Sizing
-config.initial_cols = 85
+config.initial_cols = 130
 config.initial_rows = 24
 
 -- Color scheme
