@@ -7,7 +7,7 @@ return {
       options = {
         offsets = {
           {
-            filetype = "neo-tree",
+            filetype = "NvimTree",
             text = "Filesystem",
             highlight = "Title",
             text_align = "center",
@@ -15,7 +15,7 @@ return {
         },
         diagnostics = "nvim_lsp",
         modified_icon = "●",
-        separator_style = "",
+        separator_style = "|",
         show_close_icon = true,
         show_buffer_close_icons = true,
       },

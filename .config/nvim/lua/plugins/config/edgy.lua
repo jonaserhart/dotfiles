@@ -10,13 +10,40 @@ return {
       closed = "",
       open = "",
     },
+    left = {
+      {
+        wo = {
+          winbar = false,
+        },
+        ft = "NvimTree",
+        filter = function(_, win)
+          return vim.api.nvim_win_get_config(win).relative == ""
+        end,
+        size = { height = 1.0, width = 0.2 },
+      },
+      {
+        title = "Watches",
+        ft = "dapui_watches",
+        size = { width = 0.15 },
+      },
+      {
+        title = "Stacks",
+        ft = "dapui_stacks",
+        size = { width = 0.15 },
+      },
+      {
+        title = "Breakpoints",
+        ft = "dapui_breakpoints",
+        size = { width = 0.15 },
+      },
+    },
     bottom = {
       {
         title = "Terminal",
         ft = "toggleterm",
         size = { height = 0.4 },
         -- exclude floating windows
-        filter = function(buf, win)
+        filter = function(_, win)
           return vim.api.nvim_win_get_config(win).relative == ""
         end,
       },
@@ -43,47 +70,6 @@ return {
         title = "Locals",
         ft = "dapui_scopes",
         size = { height = 0.33 },
-      },
-    },
-    left = {
-      -- Neo-tree filesystem always takes half the screen height
-      {
-        wo = {
-          winbar = false,
-        },
-        ft = "neo-tree",
-        filter = function(buf, win)
-          return vim.b[buf].neo_tree_source == "filesystem"
-              and vim.api.nvim_win_get_config(win).relative == ""
-        end,
-        size = { height = 0.5, width = 0.2 },
-      },
-      {
-        wo = {
-          winbar = false,
-        },
-        ft = "neo-tree",
-        filter = function(buf, win)
-          return vim.b[buf].neo_tree_source == "git_status"
-              and vim.api.nvim_win_get_config(win).relative == ""
-        end,
-        open = "Neotree git_status reveal left",
-        size = { height = 0.5, width = 0.15 },
-      },
-      {
-        title = "Watches",
-        ft = "dapui_watches",
-        size = { width = 0.15 },
-      },
-      {
-        title = "Stacks",
-        ft = "dapui_stacks",
-        size = { width = 0.15 },
-      },
-      {
-        title = "Breakpoints",
-        ft = "dapui_breakpoints",
-        size = { width = 0.15 },
       },
     },
     right = {

@@ -7,7 +7,7 @@ return {
       highlight = "LineNr",
     },
     exclude = {
-      filetypes = { "dashboard", "neo-tree" }
+      filetypes = { "dashboard", "NvimTree" },
     },
     scope = {
       enabled = true,

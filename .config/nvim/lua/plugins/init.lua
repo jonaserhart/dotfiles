@@ -6,7 +6,7 @@ return {
   { "RRethy/vim-illuminate",                           import = "plugins.config.illuminate" },
   { "nvim-lualine/lualine.nvim",                       import = "plugins.config.statusline" },
   { "rcarriga/nvim-notify",                            import = "plugins.config.notify" },
-  { "nvim-neo-tree/neo-tree.nvim",                     import = "plugins.config.tree" },
+  { "nvim-tree/nvim-tree.lua",                         import = "plugins.config.tree" },
   { "nvim-telescope/telescope.nvim",                   import = "plugins.config.telescope" },
   { "nvim-telescope/telescope-ui-select.nvim",         import = "plugins.config.telescope-ui-select" },
   { "folke/trouble.nvim",                              import = "plugins.config.trouble" },
@@ -52,6 +52,7 @@ return {
   -- Org
   { "nvim-orgmode/orgmode",                            import = "plugins.config.org" },
   { "natecraddock/workspaces.nvim",                    import = "plugins.config.workspaces" },
+  { "Dan7h3x/LazyDo",                                  import = "plugins.config.lazydo" },
 
   -- Terminal
   { "akinsho/toggleterm.nvim",                         import = "plugins.config.terminal" },
