@@ -6,5 +6,9 @@ return {
 
     "nvim-telescope/telescope.nvim",
   },
-  config = true
+  config = function()
+    require("neogit").setup({})
+
+    vim.api.nvim_set_keymap("n", "<leader>vc", ":Neogit kind=vsplit<CR>", { noremap = true, silent = true })
+  end,
 }

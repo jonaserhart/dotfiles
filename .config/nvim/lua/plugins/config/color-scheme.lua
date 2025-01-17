@@ -108,6 +108,7 @@ return {
           CursorLineNr = { fg = "#495162", bg = "#2d313b" },
           IblScope = { link = "CursorLineNr" },
           Cursor = { fg = "#000000", bg = "#73ADE8" },
+          EdgyNormal = { bg = "#2F343E", fg = "#acb2be" },
         },
         options = {
           cursorline = true,

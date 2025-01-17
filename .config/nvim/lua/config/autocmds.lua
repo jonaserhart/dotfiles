@@ -13,15 +13,14 @@ function M.setup_auto_cmds()
       vim.api.nvim_set_hl(0, "NvimTreeOpenedFile", { fg = "#A9AFBC", bold = true })
       vim.api.nvim_set_hl(0, "NvimTreeOpenedFolderName", { fg = "#A9AFBC", bold = true })
       vim.api.nvim_set_hl(0, "NvimTreeOpenedHL", { fg = "#A9AFBC", bold = true })
-    end,
-  })
+      vim.api.nvim_set_hl(0, "NvimTreeNormal", { link = "EdgyNormal" })
+      vim.api.nvim_set_hl(0, "NvimTreeNormalNC", { link = "EdgyNormal" })
 
-  vim.api.nvim_create_autocmd("ColorScheme", {
-    pattern = "*",
-    desc = "Override edgy.nvim highlights",
-    callback = function()
-      -- Set folder and file icon colors
-      vim.api.nvim_set_hl(0, "EdgyNormal", { bg = "#282c34" })
+      vim.api.nvim_set_hl(0, "NeoTreeDirectoryIcon", { fg = "#A9AFBC" })
+      vim.api.nvim_set_hl(0, "NeoTreeGitUntracked", { fg = "#A9AFBC" })
+      vim.api.nvim_set_hl(0, "NeoTreeNormalNC", { link = "EdgyNormal" })
+
+      -- xxx guibg=#282c33
     end,
   })
 

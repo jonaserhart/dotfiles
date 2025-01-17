@@ -7,7 +7,7 @@ return {
       options = {
         offsets = {
           {
-            filetype = "NvimTree",
+            filetype = "neo-tree",
             text = "Project",
             highlight = "Title",
             text_align = "center",

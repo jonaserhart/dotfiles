@@ -11,11 +11,21 @@ return {
       open = "",
     },
     left = {
+      -- {
+      --   wo = {
+      --     winbar = false,
+      --   },
+      --   ft = "NvimTree",
+      --   filter = function(_, win)
+      --     return vim.api.nvim_win_get_config(win).relative == ""
+      --   end,
+      --   size = { height = 1.0, width = 0.2 },
+      -- },
       {
         wo = {
           winbar = false,
         },
-        ft = "NvimTree",
+        ft = "neo-tree",
         filter = function(_, win)
           return vim.api.nvim_win_get_config(win).relative == ""
         end,
@@ -80,9 +90,18 @@ return {
         size = { width = 0.25 },
       },
       {
+        title = "Commit",
+        ft = "NeogitStatus",
+        filter = function(_, win)
+          return vim.api.nvim_win_get_config(win).relative == ""
+        end,
+        size = { width = 0.4 },
+      },
+      {
         title = "Symbols",
         ft = "sagaoutline",
         open = "Lspsaga outline",
+        size = { width = 0.25 },
       },
     },
   },
