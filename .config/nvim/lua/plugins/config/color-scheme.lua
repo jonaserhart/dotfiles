@@ -22,7 +22,7 @@ return {
     config = function()
       local colors = {
         -- Base colors
-        bg = "#25272d",
+        bg = "#282C33",
         fg = "#acb2be",
         bg_highlight = "#363c46",
 
@@ -33,6 +33,10 @@ return {
         green = "#a1c181", -- strings
         white = "#c8ccd4", -- variables, constants, fields, parameters
         comment = "#979aa1",
+
+        line_nr = "#838994",    -- Based on tab.inactiveForeground
+        cursor_line_bg = "#2f343e", -- Based on sideBar.background
+        visual_bg = "#454a56",  -- list.activeSelectionBackground
       }
       require("onedarkpro").setup({
         colors = colors, -- Our custom colors
@@ -95,6 +99,15 @@ return {
           -- UI elements
           Normal = { fg = "${fg}", bg = "${bg}" },
           SignColumn = { bg = "${bg}" },
+          StatusLine = { fg = "${white}", bg = "#3b414d" },
+          StatusLineNC = { fg = "${line_nr}", bg = "#3b414d" },
+          VertSplit = { fg = "#464b57" },
+          TabLine = { fg = "${line_nr}", bg = "#2f343e" },
+          TabLineSel = { fg = "${white}", bg = "#202427" },
+          TabLineFill = { bg = "#2f343e" },
+          CursorLineNr = { fg = "#495162", bg = "#2d313b" },
+          IblScope = { link = "CursorLineNr" },
+          Cursor = { fg = "#000000", bg = "#73ADE8" },
         },
         options = {
           cursorline = true,

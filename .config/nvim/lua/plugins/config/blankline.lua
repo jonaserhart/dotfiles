@@ -4,10 +4,9 @@ return {
   opts = {
     indent = {
       char = "│",
-      highlight = "LineNr",
     },
     exclude = {
-      filetypes = { "dashboard", "NvimTree" },
+      filetypes = { "dashboard" },
     },
     scope = {
       enabled = true,

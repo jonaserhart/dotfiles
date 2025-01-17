@@ -17,7 +17,7 @@ return {
   { "lukas-reineke/indent-blankline.nvim",             import = "plugins.config.blankline" },
   { "nvim-tree/nvim-web-devicons",                     import = "plugins.config.icons" },
   { "mvllow/modes.nvim",                               import = "plugins.config.modes" },
-  { "rachartier/tiny-code-action.nvim",                import = "plugins.config.tiny-ca" },
+  -- { "nvim-treesitter/nvim-treesitter-context",         import = "plugins.config.treesitter-context" },
 
   -- Completion
   { "hrsh7th/nvim-cmp",                                import = "plugins.config.completions" },
@@ -37,7 +37,6 @@ return {
 
   -- Formatting
   { "nvim-treesitter/nvim-treesitter",                 import = "plugins.config.treesitter" },
-  { "nvim-treesitter/nvim-treesitter-context",         import = "plugins.config.treesitter-context" },
 
   -- Version control
   { "sindrets/diffview.nvim",                          import = "plugins.config.diffview" },

@@ -7,15 +7,23 @@ return {
   },
   config = function()
     require("nvim-tree").setup({
+      filters = {
+        custom = {
+          "^.git$",
+        },
+      },
       renderer = {
         indent_markers = {
-          enable = true,
+          enable = false,
           inline_arrows = true,
           icons = {
             corner = "└",
+            -- corner = "│",
             edge = "│",
             item = "│",
+            -- bottom = "│",
             bottom = "─",
+            -- none = "│",
             none = " ",
           },
         },
@@ -52,8 +60,8 @@ return {
               open = "󰝰 ",
               empty = " ",
               empty_open = " ",
-              arrow_closed = "",
-              arrow_open = "",
+              arrow_closed = " ",
+              arrow_open = " ",
               symlink = " ",
               symlink_open = " ",
             },

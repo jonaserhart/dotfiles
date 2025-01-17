@@ -4,6 +4,9 @@ local config = wezterm.config_builder()
 
 config.font = wezterm.font_with_fallback({
   {
+    family = "Zed Mono Extended",
+  },
+  {
     family = "Monaspace Neon",
   },
   {
@@ -45,7 +48,7 @@ config.font = wezterm.font_with_fallback({
   },
 })
 
-config.font_size = 14
+config.font_size = 12
 
 -- Hide tab bar
 config.hide_tab_bar_if_only_one_tab = true
@@ -55,10 +58,10 @@ config.initial_cols = 130
 config.initial_rows = 24
 
 -- Color scheme
-config.color_scheme = "nord"
+config.color_scheme = "OneDark (base16)"
 
-config.window_background_opacity = 0.9
-config.macos_window_background_blur = 15
+-- config.window_background_opacity = 0.9
+-- config.macos_window_background_blur = 15
 
 config.window_padding = {
   left = 0,
@@ -68,7 +71,7 @@ config.window_padding = {
 }
 
 config.line_height = 1.618
--- Keys
 
+-- Keys
 config.send_composed_key_when_left_alt_is_pressed = true
 return config

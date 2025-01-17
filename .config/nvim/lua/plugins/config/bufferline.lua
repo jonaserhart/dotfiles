@@ -8,14 +8,15 @@ return {
         offsets = {
           {
             filetype = "NvimTree",
-            text = "Filesystem",
+            text = "Project",
             highlight = "Title",
             text_align = "center",
           },
         },
+        -- separator_style = "slant" | "slope" | "thick" | "thin",
+        separator_style = "slant",
         diagnostics = "nvim_lsp",
         modified_icon = "●",
-        separator_style = "|",
         show_close_icon = true,
         show_buffer_close_icons = true,
       },
