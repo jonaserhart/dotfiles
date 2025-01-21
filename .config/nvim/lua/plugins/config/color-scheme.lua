@@ -28,15 +28,15 @@ return {
 
         -- Syntax colors
         purple = "#ab7aca", -- keywords
-        blue = "#73ade9", -- functions
-        cyan = "#6eb4bf", -- types
-        green = "#a1c181", -- strings
-        white = "#c8ccd4", -- variables, constants, fields, parameters
+        blue = "#73ade9",   -- functions
+        cyan = "#6eb4bf",   -- types
+        green = "#a1c181",  -- strings
+        white = "#c8ccd4",  -- variables, constants, fields, parameters
         comment = "#979aa1",
 
-        line_nr = "#838994",    -- Based on tab.inactiveForeground
+        line_nr = "#838994",        -- Based on tab.inactiveForeground
         cursor_line_bg = "#2f343e", -- Based on sideBar.background
-        visual_bg = "#454a56",  -- list.activeSelectionBackground
+        visual_bg = "#454a56",      -- list.activeSelectionBackground
       }
       require("onedarkpro").setup({
         colors = colors, -- Our custom colors
@@ -50,35 +50,32 @@ return {
           Operator = { fg = "${cyan}" },
 
           -- TreeSitter highlights
-          ["@variable"] = { fg = "${white}" },      -- Variable names
+          ["@variable"] = { fg = "${white}" },           -- Variable names
           ["@variable.parameter"] = { fg = "${white}" }, -- Variable names
-          ["@variable.builtin"] = { fg = "${white}" }, -- Built-in variables
-          ["@constant"] = { fg = "${white}" },      -- Constants
-          ["@constant.builtin"] = { fg = "${white}" }, -- Built-in constants
-          ["@parameter"] = { fg = "${white}" },     -- Parameters
-          ["@field"] = { fg = "${white}" },         -- Struct fields
-          ["@property"] = { fg = "${white}" },      -- Object properties
-          ["@function"] = { fg = "${blue}" },       -- Functions
-          ["@function.call"] = { fg = "${blue}" },  -- Function calls
-          ["@keyword"] = { fg = "${purple}" },      -- Keywords
-          ["@keyword.function"] = { fg = "${purple}" }, -- Function keyword
-          ["@type"] = { fg = "${cyan}" },           -- Types
-          ["@type.builtin"] = { fg = "${cyan}" },   -- Built-in types
-          ["@namespace"] = { fg = "${white}" },     -- Packages and namespaces
-          ["@string"] = { fg = "${green}" },        -- Strings
-          ["@number"] = { fg = "${white}" },        -- Numbers
-          ["@module"] = { fg = "${white}" },        -- Package identifiers like 'cmp'
-          ["@field.definition"] = { fg = "${white}" }, -- Field definitions in structs
-          ["@field.go"] = { fg = "${white}" },      -- Fields in Go
-          ["@property.go"] = { fg = "${white}" },   -- Properties in Go
-          ["@parameter.go"] = { fg = "${white}" },  -- Function parameters in Go
-          ["@receiver"] = { fg = "${white}" },      -- Method receivers in Go
-          ["@type.builtin.go"] = { fg = "${cyan}" }, -- Types
-          ["@variable.member"] = { fg = "${white}" }, -- Struct members
-          ["@lsp.type.property"] = { fg = "${white}" }, -- LSP property hints
+          ["@variable.builtin"] = { fg = "${white}" },   -- Built-in variables
+          ["@constant"] = { fg = "${white}" },           -- Constants
+          ["@constant.builtin"] = { fg = "${white}" },   -- Built-in constants
+          ["@parameter"] = { fg = "${white}" },          -- Parameters
+          ["@field"] = { fg = "${white}" },              -- Struct fields
+          ["@property"] = { fg = "${white}" },           -- Object properties
+          ["@function"] = { fg = "${blue}" },            -- Functions
+          ["@function.call"] = { fg = "${blue}" },       -- Function calls
+          ["@keyword"] = { fg = "${purple}" },           -- Keywords
+          ["@keyword.function"] = { fg = "${purple}" },  -- Function keyword
+          ["@type"] = { fg = "${cyan}" },                -- Types
+          ["@type.builtin"] = { fg = "${cyan}" },        -- Built-in types
+          ["@namespace"] = { fg = "${white}" },          -- Packages and namespaces
+          ["@string"] = { fg = "${green}" },             -- Strings
+          ["@module"] = { fg = "${white}" },             -- Package identifiers like 'cmp'
+          ["@field.definition"] = { fg = "${white}" },   -- Field definitions in structs
+          ["@property.go"] = { fg = "${white}" },        -- Properties in Go
+          ["@receiver"] = { fg = "${white}" },           -- Method receivers in Go
+          ["@type.builtin.go"] = { fg = "${cyan}" },     -- Types
+          ["@variable.member"] = { fg = "${white}" },    -- Struct members
+          ["@lsp.type.property"] = { fg = "${white}" },  -- LSP property hints
           ["@lsp.type.parameter"] = { fg = "${white}" }, -- LSP parameter hints
-          ["@lsp.type.variable"] = { fg = "${white}" }, -- LSP variable hints
-          ["@lsp.type.member"] = { fg = "${white}" }, -- LSP member hints
+          ["@lsp.type.variable"] = { fg = "${white}" },  -- LSP variable hints
+          ["@lsp.type.member"] = { fg = "${white}" },    -- LSP member hints
 
           -- Go-specific syntax
           goField = { fg = "${white}" },
