@@ -5,6 +5,10 @@ local function orgmode_usercmds()
     agendaapi.agenda({ span = "day", })
   end, {})
 
+  vim.api.nvim_create_user_command('AgendaWeek', function()
+    agendaapi.agenda({ span = "week", })
+  end, {})
+
   vim.api.nvim_create_user_command('AgendaYesterday', function()
     local yesterday = os.date("[%Y-%m-%d %a %H:%M]", os.time() - 24 * 60 * 60)
     local now = os.date("[%Y-%m-%d %a %H:%M]", os.time())
@@ -25,7 +29,7 @@ return {
 
     vim.api.nvim_create_user_command("LazyGit", function()
       local w = require("wezterm")
-      w.spawn("lazygit", { new_window = true, cwd = vim.fn.getcwd()})
+      w.spawn("lazygit", { new_window = true, cwd = vim.fn.getcwd() })
       -- vim.cmd("FloatermNew --height=0.9 --width=0.9 --wintype=float --name=lazygit --autoclose=2 lazygit")
     end, {})
 

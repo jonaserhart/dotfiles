@@ -23,7 +23,7 @@ return {
         desc = "Agenda",
         desc_hl = "String",
         key_hl = "Number",
-        action = "AgendaDay",
+        action = "AgendaWeek",
         key = "a",
         key_format = ' %s'
       },
