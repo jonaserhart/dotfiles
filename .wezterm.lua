@@ -48,7 +48,7 @@ config.font = wezterm.font_with_fallback({
   },
 })
 
-config.font_size = 13
+config.font_size = 15
 
 -- Hide tab bar
 config.hide_tab_bar_if_only_one_tab = true

@@ -17,11 +17,10 @@ function M.setup_auto_cmds()
       vim.api.nvim_set_hl(0, "NvimTreeNormalNC", { link = "EdgyNormal" })
 
       vim.api.nvim_set_hl(0, "NeoTreeDirectoryIcon", { fg = "#A9AFBC" })
+      vim.api.nvim_set_hl(0, "NeoTreeDirectoryName", { fg = "#A9AFBC" })
       vim.api.nvim_set_hl(0, "NeoTreeGitUntracked", { fg = "#A9AFBC" })
       vim.api.nvim_set_hl(0, "NeoTreeNormalNC", { link = "EdgyNormal" })
       vim.api.nvim_set_hl(0, "GitSignsCurrentLineBlame", { bg = "#2D313C", fg = "#5c6370" })
-
-      -- xxx guibg=#282c33
     end,
   })
 
@@ -34,6 +33,14 @@ function M.setup_auto_cmds()
       vim.api.nvim_set_hl(0, "DapLogPoint", { ctermbg = 0, fg = "#61afef" })
       vim.api.nvim_set_hl(0, "DapStopped", { ctermbg = 0, fg = "#98c379" })
     end,
+  })
+
+  vim.api.nvim_create_autocmd("BufEnter", {
+    pattern  = "dashboard",
+    desc     = "open agenda by default when opening dashboard",
+    callback = function()
+      vim.cmd("AgendaDay")
+    end
   })
 end
 

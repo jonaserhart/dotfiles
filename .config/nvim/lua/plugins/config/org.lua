@@ -17,7 +17,7 @@ return {
       org_agenda_files = (org_files_path .. "**/*"),
       org_default_notes_file = (org_files_path .. "refile.org"),
       org_src_window_setup = "top 40new",
-      org_agenda_min_height = 30,
+      org_agenda_min_height = 10,
       org_agenda_filter = "/",
       org_capture_templates = {
         t = {

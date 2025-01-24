@@ -33,3 +33,6 @@ if test ! $(which wezterm); then
   brew install --cask wezterm
   wezterm cli spawn --new-window
 fi
+
+# font
+brew install --cask font-zed-mono
