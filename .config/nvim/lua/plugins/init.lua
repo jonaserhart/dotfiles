@@ -22,8 +22,8 @@ return {
   -- { "nvim-treesitter/nvim-treesitter-context",         import = "plugins.config.treesitter-context" },
 
   -- Completion
-  { "hrsh7th/nvim-cmp",                                import = "plugins.config.completions" },
-  { "windwp/nvim-autopairs",                           import = "plugins.config.autopairs" },
+  { "saghen/blink.cmp",                                import = "plugins.config.completions" },
+  { "windwp/nvim-autopairs",                                import = "plugins.config.autopairs" },
 
   -- Core LSP, DAP and Testing frameworks
   { "neovim/nvim-lspconfig",                           import = "plugins.config.lsp" },

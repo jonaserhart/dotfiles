@@ -93,6 +93,9 @@ return {
           ["@function.go"] = { fg = "${blue}" },
           ["@namespace.go"] = { fg = "${white}" },
 
+          -- org
+          ["@org.agenda.scheduled"] = { fg = "${white}" },
+
           -- UI elements
           Normal = { fg = "${fg}", bg = "${bg}" },
           SignColumn = { bg = "${bg}" },
@@ -106,6 +109,7 @@ return {
           IblScope = { link = "CursorLineNr" },
           Cursor = { fg = "#000000", bg = "#73ADE8" },
           EdgyNormal = { bg = "#2F343E", fg = "#acb2be" },
+          BlinkCmpGhostText = { link = "CursorLine" }
         },
         options = {
           cursorline = true,

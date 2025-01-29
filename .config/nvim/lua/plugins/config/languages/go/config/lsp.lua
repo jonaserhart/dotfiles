@@ -2,7 +2,7 @@ local M = {}
 
 function M.setup()
   local lspconfig = require("lspconfig")
-  local capabilities = require("cmp_nvim_lsp").default_capabilities()
+  local capabilities = require('blink.cmp').get_lsp_capabilities()
 
 
   capabilities.textDocument = vim.tbl_deep_extend("force", capabilities.textDocument or {}, {
