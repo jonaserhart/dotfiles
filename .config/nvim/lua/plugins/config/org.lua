@@ -12,6 +12,7 @@ return {
   ft = { 'org' },
   config = function()
     local org_files_path = require("config.utils").get_custom_config("orgfiles", "~/orgfiles/")
+    local custom_commands = require("config.utils").get_custom_config("custom_agenda_actions", {})
     -- Setup orgmode
     require("orgmode").setup({
       org_agenda_files = (org_files_path .. "**/*"),
@@ -40,6 +41,7 @@ return {
         },
         n = { description = "note", template = "note%?", target = org_files_path .. "notes.org" },
       },
+      org_agenda_custom_commands = custom_commands,
       notifications = {
         enabled = true,
         cron_enabled = true,

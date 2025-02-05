@@ -4,7 +4,7 @@ function M.setup()
   local lspconfig = require("lspconfig")
   local capabilities = require('blink.cmp').get_lsp_capabilities()
 
-  lspconfig.vtsls.setup({
+  lspconfig.ts_ls.setup({
     capabilities = capabilities,
     filetypes = {
       "javascript",
@@ -41,42 +41,42 @@ function M.setup()
     --   },
     -- },
     on_attach = function(client, bufnr)
-      local function buf_set_keymap(mode, lhs, rhs, opts)
-        opts = opts or {}
-        opts.buffer = bufnr
-        vim.keymap.set(mode, lhs, rhs, opts)
-      end
-      buf_set_keymap("n", "<leader>co", function()
-        vim.lsp.buf.execute_command({
-          command = "_typescript.organizeImports",
-          arguments = { vim.api.nvim_buf_get_name(0) },
-        })
-      end, { desc = "Organize Imports" })
-
-      buf_set_keymap("n", "<leader>cM", function()
-        vim.lsp.buf.execute_command({
-          command = "_typescript.addMissingImports",
-          arguments = { vim.api.nvim_buf_get_name(0) },
-        })
-      end, { desc = "Add missing imports" })
-
-      buf_set_keymap("n", "<leader>cu", function()
-        vim.lsp.buf.execute_command({
-          command = "_typescript.removeUnused",
-          arguments = { vim.api.nvim_buf_get_name(0) },
-        })
-      end, { desc = "Remove unused imports" })
-
-      buf_set_keymap("n", "<leader>cD", function()
-        vim.lsp.buf.execute_command({
-          command = "_typescript.applyFixAll",
-          arguments = { vim.api.nvim_buf_get_name(0) },
-        })
-      end, { desc = "Fix all diagnostics" })
-
-      buf_set_keymap("n", "<leader>cV", function()
-        vim.lsp.buf.execute_command({ command = "typescript.selectTypeScriptVersion" })
-      end, { desc = "Select TS workspace version" })
+      --   local function buf_set_keymap(mode, lhs, rhs, opts)
+      --     opts = opts or {}
+      --     opts.buffer = bufnr
+      --     vim.keymap.set(mode, lhs, rhs, opts)
+      --   end
+      --   buf_set_keymap("n", "<leader>co", function()
+      --     vim.lsp.buf.execute_command({
+      --       command = "_typescript.organizeImports",
+      --       arguments = { vim.api.nvim_buf_get_name(0) },
+      --     })
+      --   end, { desc = "Organize Imports" })
+      --
+      --   buf_set_keymap("n", "<leader>cM", function()
+      --     vim.lsp.buf.execute_command({
+      --       command = "_typescript.addMissingImports",
+      --       arguments = { vim.api.nvim_buf_get_name(0) },
+      --     })
+      --   end, { desc = "Add missing imports" })
+      --
+      --   buf_set_keymap("n", "<leader>cu", function()
+      --     vim.lsp.buf.execute_command({
+      --       command = "_typescript.removeUnused",
+      --       arguments = { vim.api.nvim_buf_get_name(0) },
+      --     })
+      --   end, { desc = "Remove unused imports" })
+      --
+      --   buf_set_keymap("n", "<leader>cD", function()
+      --     vim.lsp.buf.execute_command({
+      --       command = "_typescript.applyFixAll",
+      --       arguments = { vim.api.nvim_buf_get_name(0) },
+      --     })
+      --   end, { desc = "Fix all diagnostics" })
+      --
+      --   buf_set_keymap("n", "<leader>cV", function()
+      --     vim.lsp.buf.execute_command({ command = "typescript.selectTypeScriptVersion" })
+      --   end, { desc = "Select TS workspace version" })
     end,
   })
 end

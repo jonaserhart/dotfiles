@@ -21,6 +21,11 @@ return {
     completion = {
       ghost_text = {
         enabled = true,
+      },
+      menu = {
+        draw = {
+          columns = { { "kind_icon" }, { "label", "label_description", gap = 1 }, { "kind" } }
+        }
       }
     },
 
@@ -42,9 +47,10 @@ return {
       default = { 'lsp', 'path', 'snippets', 'buffer' },
     },
   },
-  opts_extend = { "sources.default" },
   config = function(_, opts)
     require("luasnip.loaders.from_vscode").lazy_load()
+
+    require("config.utils").req_custom_module("snippets")
     require("blink.cmp").setup(opts)
   end
 }
