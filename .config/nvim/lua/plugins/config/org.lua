@@ -11,8 +11,29 @@ return {
   },
   ft = { 'org' },
   config = function()
-    local org_files_path = require("config.utils").get_custom_config("orgfiles", "~/orgfiles/")
-    local custom_commands = require("config.utils").get_custom_config("custom_agenda_actions", {})
+    local config_utils = require("config.utils")
+    local org_files_path = config_utils.get_custom_config("orgfiles", "~/orgfiles/")
+    local custom_commands = config_utils.get_custom_config("custom_agenda_actions", {})
+    local def_capture_templates = {
+      t = {
+        description = "new ticket",
+        template = "ticket%?",
+        target = org_files_path .. "tickets.org",
+        properties = { before = 2, after = 2 },
+      },
+      g = {
+        description = "todo",
+        template = "* TODO %?\n\tDEADLINE: %^{due}t",
+        target = org_files_path .. "todos.org",
+        properties = { before = 2, after = 2 },
+      },
+      n = { description = "note", template = "note%?", target = org_files_path .. "notes.org" },
+    }
+
+    local custom_capture_templates = config_utils.get_custom_config("custom_org_cap_templates", {})
+
+    local org_cap_templates = config_utils.merge_tables(def_capture_templates, custom_capture_templates)
+
     -- Setup orgmode
     require("orgmode").setup({
       org_agenda_files = (org_files_path .. "**/*"),
@@ -20,27 +41,7 @@ return {
       org_src_window_setup = "top 40new",
       org_agenda_min_height = 10,
       org_agenda_filter = "/",
-      org_capture_templates = {
-        t = {
-          description = "new ticket",
-          template = "ticket%?",
-          target = org_files_path .. "tickets.org",
-          properties = { before = 2 },
-        },
-        g = {
-          description = "todo",
-          template = "* TODO %?\n\tDEADLINE: %^{due}t",
-          target = org_files_path .. "todos.org",
-          properties = { before = 2 },
-        },
-        m = {
-          description = "meeting",
-          template = "meetingnotes%?",
-          target = org_files_path .. "meetings.org",
-          properties = { before = 2 },
-        },
-        n = { description = "note", template = "note%?", target = org_files_path .. "notes.org" },
-      },
+      org_capture_templates = org_cap_templates,
       org_agenda_custom_commands = custom_commands,
       notifications = {
         enabled = true,

@@ -32,4 +32,12 @@ local get_custom_config = function(key, default)
   end
 end
 
-return { req_custom_module = req_custom_module, get_custom_config = get_custom_config }
+local merge_tables = function(t1, t2)
+  local merged = vim.deepcopy(t1)
+  for k,v in pairs(t2) do
+    merged[k] = v
+  end
+  return merged
+end
+
+return { req_custom_module = req_custom_module, get_custom_config = get_custom_config, merge_tables = merge_tables }
