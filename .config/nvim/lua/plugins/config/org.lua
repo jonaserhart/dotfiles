@@ -43,6 +43,17 @@ return {
       org_agenda_filter = "/",
       org_capture_templates = org_cap_templates,
       org_agenda_custom_commands = custom_commands,
+      org_todo_keywords = {
+        'TODO',
+        'DOING',
+        'WAITING',
+        '|',
+        'DONE',
+      },
+      org_todo_keyword_faces = {
+        DOING = ':foreground #98adec :weight bold',
+        WAITING = ':foreground #f4cc73  :weight bold',
+      },
       notifications = {
         enabled = true,
         cron_enabled = true,

@@ -50,6 +50,16 @@ return {
     -- elsewhere in your config, without redefining it, due to `opts_extend`
     sources = {
       default = { 'lsp', 'path', 'snippets' },
+      per_filetype = {
+        org = { 'orgmode', 'snippets' },
+      },
+      providers = {
+        orgmode = {
+          name = 'Orgmode',
+          module = 'orgmode.org.autocompletion.blink',
+          fallbacks = { 'buffer' },
+        }
+      }
     },
   },
   config = function(_, opts)
