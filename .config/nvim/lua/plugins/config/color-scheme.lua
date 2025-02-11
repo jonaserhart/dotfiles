@@ -16,6 +16,7 @@ return {
       -- vim.cmd("colorscheme nordic")
     end,
   },
+  { "EdenEast/nightfox.nvim" },
   {
     "olimorris/onedarkpro.nvim",
     priority = 1000, -- Ensure it loads first
@@ -116,7 +117,7 @@ return {
           transparency = false,
         },
       })
-      vim.cmd("colorscheme onedark")
+      -- vim.cmd("colorscheme onedark")
     end,
   },
   -- {
@@ -194,7 +195,7 @@ return {
     priority = 1000,
     opts = {},
     config = function()
-      -- vim.cmd("colorscheme tokyonight-storm")
+      -- vim.cmd("colorscheme tokyonight-night")
     end,
   },
   {
@@ -202,22 +203,7 @@ return {
     name = "catppuccin",
     priority = 1000,
     config = function()
-      require("catppuccin").setup({
-        no_italic = true,
-        term_colors = true,
-        transparent_background = true,
-        color_overrides = {},
-        integrations = {
-          telescope = true,
-          native_lsp = true,
-          treesitter = true,
-          gitsigns = true,
-          neotree = true,
-          cmp = true,
-          markdown = true,
-        },
-      })
-      -- vim.cmd("colorscheme catppuccin")
+      vim.cmd("colorscheme catppuccin-frappe")
     end,
   },
   {

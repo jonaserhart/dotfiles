@@ -15,6 +15,9 @@ return {
           "leoluz/nvim-dap-go",
           opts = {},
         },
+        {
+          'nvim-neotest/neotest-jest',
+        },
       },
       branch = "main",
     },
@@ -35,6 +38,15 @@ return {
         require("neotest").setup({
           adapters = {
             require("neotest-golang")(gotest),
+            require('neotest-jest')({
+              jestCommand = "npm test --",
+              jestConfigFile = "jest.config.js",
+              env = { CI = true },
+              cwd = function(_)
+                return vim.fn.getcwd()
+              end,
+            }),
+
           },
         })
       end

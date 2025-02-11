@@ -15,7 +15,7 @@ return {
           "orgagenda",
           winbar = { "NvimTree" },
         },
-        theme = "onedark",
+        theme = "auto",
       },
       sections = {
         -- lualine_a = { { "mode", separator = { left = "" }, right_padding = 2 } },
@@ -47,10 +47,18 @@ return {
             color = { gui = "bold" },
           },
         },
-        lualine_x = {},
+        lualine_x = {
+        },
         lualine_y = {
           "filetype",
           "progress",
+          {
+            function()
+              local reg = vim.fn.reg_recording()
+              if reg == "" then return "" end -- not recording
+              return "Recording @" .. reg
+            end
+          }
         },
         lualine_z = {
           { "location", left_padding = 2 },
