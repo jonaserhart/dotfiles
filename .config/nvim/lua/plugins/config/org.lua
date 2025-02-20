@@ -1,15 +1,15 @@
 return {
   "nvim-orgmode/orgmode",
-  event = 'VeryLazy',
+  event = "VeryLazy",
   dependencies = {
     {
       "akinsho/org-bullets.nvim",
       config = function()
         require("org-bullets").setup()
-      end
-    }
+      end,
+    },
   },
-  ft = { 'org' },
+  ft = { "org" },
   config = function()
     local config_utils = require("config.utils")
     local org_files_path = config_utils.get_custom_config("orgfiles", "~/orgfiles/")
@@ -44,15 +44,17 @@ return {
       org_capture_templates = org_cap_templates,
       org_agenda_custom_commands = custom_commands,
       org_todo_keywords = {
-        'TODO',
-        'DOING',
-        'WAITING',
-        '|',
-        'DONE',
+        "TODO",
+        "DOING",
+        "WAITING",
+        "REVIEW",
+        "|",
+        "DONE",
       },
       org_todo_keyword_faces = {
-        DOING = ':foreground #98adec :weight bold',
-        WAITING = ':foreground #f4cc73  :weight bold',
+        DOING = ":foreground #98adec :weight bold",
+        WAITING = ":foreground #f4cc73  :weight bold",
+        REVIEW = ":foreground #f4ccf3  :weight bold",
       },
       notifications = {
         enabled = true,
