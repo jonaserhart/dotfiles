@@ -21,6 +21,15 @@ local function orgmode_usercmds()
   end, {})
 end
 
+local function create_tmp_file()
+  local user_input = vim.fn.input("Enter filetype: ")
+  vim.cmd(":enew")
+  vim.cmd(":w ~/tmp/temp." .. user_input)
+end
+
+local function clear_tmp_files()
+  os.execute("rm " .. "~/tmp/*")
+end
 
 
 return {
@@ -33,6 +42,8 @@ return {
       -- vim.cmd("FloatermNew --height=0.9 --width=0.9 --wintype=float --name=lazygit --autoclose=2 lazygit")
     end, {})
 
+    vim.api.nvim_create_user_command("TempFile", create_tmp_file, {})
+    vim.api.nvim_create_user_command("ClearTempFiles", clear_tmp_files, {})
 
     -- load custom autocmds by environment
     local customcmds = require("config.utils").req_custom_module("usercmds")
