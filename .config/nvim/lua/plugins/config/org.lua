@@ -93,5 +93,7 @@ return {
         end,
       },
     })
+
+    vim.keymap.set("n", "<leader>toh", ":Telescope orgmode search_headings<cr>", {})
   end,
 }

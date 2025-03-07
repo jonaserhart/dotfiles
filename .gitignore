@@ -4,8 +4,8 @@
 !/.config/
 !/.zshrc
 !/.wezterm.lua
-!/.bashrc
 !/.vimrc
+!/.taskrc
 
 /.config/*
 !/.config/nvim/
