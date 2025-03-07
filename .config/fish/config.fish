@@ -37,6 +37,10 @@ function fish_greeting
   printf "-----------------------------------------------------------\n"
 end
 
+set fish_function_path \
+    ~/.config/fish/functions/*/ \
+    $fish_function_path
+
 ### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
-set --export --prepend PATH "/Users/jonas.erhart/.rd/bin"
+set --export --prepend PATH "/Users/jonaserhart/.rd/bin"
 ### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)

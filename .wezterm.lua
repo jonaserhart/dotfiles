@@ -70,7 +70,7 @@ config.window_padding = {
   bottom = 0,
 }
 
-config.line_height = 1.8
+config.line_height = 1.6
 
 -- Keys
 config.send_composed_key_when_left_alt_is_pressed = true

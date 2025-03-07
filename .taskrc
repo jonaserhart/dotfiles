@@ -1,5 +1,4 @@
 # [Created by task 3.3.0 3/5/2025 08:55:12]
-data.location=/Users/jonas.erhart/.task
 news.version=3.3.0
 
 # To use the default location of the XDG directories,
@@ -25,7 +24,7 @@ news.version=3.3.0
 #include solarized-light-256.theme
 #include no-color.theme
 
-#New UDS jira
+#New UDA jira
 uda.jira.type=string
 uda.jira.label=Jira
 
