@@ -37,7 +37,7 @@ export NVM_DIR="$HOME/.nvm"
 
 
 ### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
-export PATH="/Users/jonas.erhart/.rd/bin:$PATH"
+export PATH="/Users/jonaserhart/.rd/bin:$PATH"
 ### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
 
 alias k="kubectl"
