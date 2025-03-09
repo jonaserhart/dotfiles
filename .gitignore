@@ -5,7 +5,6 @@
 !/.zshrc
 !/.wezterm.lua
 !/.vimrc
-!/.taskrc
 
 /.config/*
 !/.config/nvim/
@@ -16,5 +15,6 @@
 /.config/nvim/lua/custom/**/*
 
 !/.fresh/
+!/.git-templates/*
 
 /**/.DS_Store
