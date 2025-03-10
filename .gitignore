@@ -15,6 +15,6 @@
 /.config/nvim/lua/custom/**/*
 
 !/.fresh/
-!/.git-templates/*
+!/.git-templates/
 
 /**/.DS_Store
