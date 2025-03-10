@@ -1,3 +1,4 @@
 if type -q task
-  complete -c ref -a '(task _unique jira)'
+  complete -c ref -x -a '(task _unique ref)'
 end
+
