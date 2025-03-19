@@ -1,103 +1,3 @@
--- return {
---   "nvim-tree/nvim-tree.lua",
---   version = "*",
---   lazy = false,
---   dependencies = {
---     "nvim-tree/nvim-web-devicons",
---   },
---   config = function()
---     require("nvim-tree").setup({
---       filters = {
---         custom = {
---           "^.git$",
---         },
---       },
---       renderer = {
---         indent_markers = {
---           enable = false,
---           inline_arrows = true,
---           icons = {
---             corner = "└",
---             -- corner = "│",
---             edge = "│",
---             item = "│",
---             -- bottom = "│",
---             bottom = "─",
---             -- none = "│",
---             none = " ",
---           },
---         },
---         icons = {
---           web_devicons = {
---             file = {
---               enable = true,
---             },
---           },
---           git_placement = "before",
---           modified_placement = "after",
---           hidden_placement = "after",
---           diagnostics_placement = "signcolumn",
---           padding = " ",
---           symlink_arrow = " ➛ ",
---           show = {
---             file = true,
---             folder = true,
---             folder_arrow = true,
---             git = true,
---             modified = true,
---             hidden = false,
---             diagnostics = true,
---             bookmarks = true,
---           },
---           glyphs = {
---             default = " ",
---             symlink = " ",
---             bookmark = "󰆤 ",
---             modified = "● ",
---             hidden = "󰜌 ",
---             folder = {
---               default = " ",
---               open = "󰝰 ",
---               empty = " ",
---               empty_open = " ",
---               arrow_closed = " ",
---               arrow_open = " ",
---               symlink = " ",
---               symlink_open = " ",
---             },
---             git = {
---               unstaged = "✗",
---               staged = "✓",
---               unmerged = "",
---               renamed = "➜",
---               untracked = "★",
---               deleted = "",
---               ignored = "◌",
---             },
---           },
---         },
---       },
---       diagnostics = {
---         enable = true,
---         show_on_dirs = true,
---         show_on_open_dirs = false,
---         debounce_delay = 500,
---         severity = {
---           min = vim.diagnostic.severity.HINT,
---           max = vim.diagnostic.severity.ERROR,
---         },
---         icons = {
---           hint = "",
---           info = "",
---           warning = "",
---           error = "",
---         },
---       },
---     })
---     vim.keymap.set("n", "<C-n>", ":NvimTreeFocus<CR>", {})
---     vim.keymap.set("n", "<C-C>", ":NvimTreeClose<CR>", {})
---   end,
--- }
 return {
   "nvim-neo-tree/neo-tree.nvim",
   branch = "v3.x",
@@ -120,6 +20,9 @@ return {
         },
       },
       default_component_configs = {
+        indent = {
+          with_markers = false,
+        },
         icon = {
           folder_closed = " ",
           folder_open = "󰝰 ",

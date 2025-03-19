@@ -10,6 +10,11 @@ return {
     },
     { "nvim-orgmode/telescope-orgmode.nvim" },
   },
+  opts = {
+    defaults = {
+      borderchars = { " ", " ", " ", " ", " ", " ", " ", " " },
+    },
+  },
   config = function(_, opts)
     require("telescope").setup(opts)
     require("telescope").load_extension("cmdline")

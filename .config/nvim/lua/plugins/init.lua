@@ -6,9 +6,7 @@ return {
   { "RRethy/vim-illuminate",                           import = "plugins.config.illuminate" },
   { "nvim-lualine/lualine.nvim",                       import = "plugins.config.statusline" },
   { "rcarriga/nvim-notify",                            import = "plugins.config.notify" },
-  -- { "nvim-tree/nvim-tree.lua",                         import = "plugins.config.tree" },
   { "nvim-neo-tree/neo-tree.nvim",                     import = "plugins.config.tree" },
-  -- { "nvim-neo-tree/neo-tree.nvim",                     import = "plugins.config.file-explorer" },
   { "nvim-telescope/telescope.nvim",                   import = "plugins.config.telescope" },
   { "nvim-telescope/telescope-ui-select.nvim",         import = "plugins.config.telescope-ui-select" },
   { "folke/trouble.nvim",                              import = "plugins.config.trouble" },
@@ -16,14 +14,13 @@ return {
   { "folke/todo-comments.nvim",                        import = "plugins.config.todo" },
   { "s1n7ax/nvim-window-picker",                       import = "plugins.config.windowpicker" },
   { "OXY2DEV/markview.nvim",                           import = "plugins.config.markdown-preview" },
-  { "lukas-reineke/indent-blankline.nvim",             import = "plugins.config.blankline" },
   { "nvim-tree/nvim-web-devicons",                     import = "plugins.config.icons" },
   { "mvllow/modes.nvim",                               import = "plugins.config.modes" },
   -- { "nvim-treesitter/nvim-treesitter-context",         import = "plugins.config.treesitter-context" },
 
   -- Completion
   { "saghen/blink.cmp",                                import = "plugins.config.completions" },
-  { "windwp/nvim-autopairs",                                import = "plugins.config.autopairs" },
+  { "windwp/nvim-autopairs",                           import = "plugins.config.autopairs" },
 
   -- Core LSP, DAP and Testing frameworks
   { "neovim/nvim-lspconfig",                           import = "plugins.config.lsp" },

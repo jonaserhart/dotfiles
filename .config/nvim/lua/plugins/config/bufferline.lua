@@ -14,7 +14,7 @@ return {
           },
         },
         -- separator_style = "slant" | "slope" | "thick" | "thin",
-        separator_style = "slant",
+        separator_style = "thin",
         diagnostics = "nvim_lsp",
         modified_icon = "●",
         show_close_icon = true,

@@ -3,13 +3,21 @@ return {
   config = function()
     local workspaces = require("workspaces")
     workspaces.setup({
+      ui = {
+        telescope = {
+          border = "none",
+          borderchars = { " ", " ", " ", " ", " ", " ", " ", " " },
+        },
+      },
       hooks = {
         open = function()
           vim.api.nvim_exec_autocmds("User", { pattern = "WorkspacesOpen" })
           vim.cmd("Telescope find_files")
         end,
-      }
+      },
     })
+
+    require("telescope").load_extension("workspaces")
     -- local org_files_path = require("config.utils").get_custom_config("orgfiles", "~/orgfiles/")
     --
     -- local list = workspaces.list()
@@ -30,5 +38,5 @@ return {
     -- if contains_nvim_dir then
     --   workspaces.add("~/.config/nvim", "nvim")
     -- end
-  end
+  end,
 }

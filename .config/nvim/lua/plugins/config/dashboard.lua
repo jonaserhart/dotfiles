@@ -13,9 +13,9 @@ return {
         desc = "Open a workspace",
         desc_hl = "String",
         key_hl = "Number",
-        action = "WorkspacesOpen",
+        action = "Telescope workspaces",
         key = "w",
-        key_format = ' %s'
+        key_format = " %s",
       },
       {
         icon = "󰃭 ",
@@ -25,7 +25,7 @@ return {
         key_hl = "Number",
         action = "AgendaWeek",
         key = "a",
-        key_format = ' %s'
+        key_format = " %s",
       },
       table.unpack(custom_actions),
       {
@@ -36,7 +36,7 @@ return {
         key_hl = "Number",
         action = "WorkspacesOpen orgfiles",
         key = "o",
-        key_format = ' %s'
+        key_format = " %s",
       },
       {
         icon = " ",
@@ -46,7 +46,7 @@ return {
         key_hl = "Number",
         action = "WorkspacesOpen nvim",
         key = "c",
-        key_format = ' %s'
+        key_format = " %s",
       },
     }
 
@@ -66,7 +66,7 @@ return {
           "",
         },
         center = center,
-      }
+      },
     })
   end,
   dependencies = { { "nvim-tree/nvim-web-devicons" } },

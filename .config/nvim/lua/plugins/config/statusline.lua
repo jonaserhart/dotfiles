@@ -6,7 +6,7 @@ return {
       options = {
         component_separators = "",
         globalstatus = true,
-        section_separators = { left = "", right = "" },
+        section_separators = { left = " ", right = " " },
         disabled_filetypes = {
           "dashboard",
           "quickfix",
@@ -47,18 +47,19 @@ return {
             color = { gui = "bold" },
           },
         },
-        lualine_x = {
-        },
+        lualine_x = {},
         lualine_y = {
           "filetype",
           "progress",
           {
             function()
               local reg = vim.fn.reg_recording()
-              if reg == "" then return "" end -- not recording
+              if reg == "" then
+                return ""
+              end -- not recording
               return "Recording @" .. reg
-            end
-          }
+            end,
+          },
         },
         lualine_z = {
           { "location", left_padding = 2 },

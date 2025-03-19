@@ -2,6 +2,9 @@ return {
   "nvimdev/lspsaga.nvim",
   config = function()
     require("lspsaga").setup({
+      ui = {
+        border = "none",
+      },
       lightbulb = {
         -- enable = false
         virtual_text = false,
@@ -15,8 +18,8 @@ return {
     })
 
     vim.keymap.set("n", "<leader>ic", ":Lspsaga incoming_calls<cr>", {})
-    vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
-    vim.keymap.set("v", "<leader>ca", vim.lsp.buf.code_action, {})
+    vim.keymap.set("n", "<leader>ca", ":Lspsaga code_action<cr>", {})
+    vim.keymap.set("v", "<leader>ca", ":Lspsaga code_action<cr>", {})
     vim.keymap.set("n", "<leader>gd", ":Lspsaga goto_definition<cr>", {})
     vim.keymap.set("n", "<leader>pd", ":Lspsaga peek_definition<cr>", {})
     vim.keymap.set("n", "<leader>ptd", ":Lspsaga peek_type_definition<cr>", {})

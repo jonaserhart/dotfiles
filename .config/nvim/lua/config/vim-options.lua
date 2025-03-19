@@ -67,3 +67,9 @@ vim.opt.fillchars = {
   verthoriz = "╋",
   eob = " ",
 }
+
+-- setup gui
+
+if vim.g.neovide then
+  require("config.gui").setup()
+end
