@@ -8,6 +8,7 @@
 
 /.config/*
 !/.config/nvim/
+!/.config/starship.toml
 !/.config/fish/
 /.config/fish/functions/private/**/*
 !/.config/omf/
