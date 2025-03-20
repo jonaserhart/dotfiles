@@ -26,6 +26,27 @@ function M.setup()
   vim.g.neovide_input_macos_option_key_is_meta = "only_left"
 
   vim.g.neovide_cursor_vfx_mode = "railgun"
+  vim.api.nvim_create_user_command("NewNeovide", function()
+    local command = "open -n -a Neovide"
+    local handle = io.popen(command)
+    if handle then
+      handle:close()
+    else
+      print("Failed to open Neovide")
+    end
+  end, {})
+  vim.api.nvim_set_keymap("n", "<D-n>", ":NewNeovide<CR>", { noremap = true, silent = true })
+
+  vim.api.nvim_create_user_command("NewWezterm", function()
+    local command = "open -n -a WezTerm"
+    local handle = io.popen(command)
+    if handle then
+      handle:close()
+    else
+      print("Failed to open WezTerm")
+    end
+  end, {})
+  vim.api.nvim_set_keymap("n", "<D-t>", ":NewWezterm<CR>", { noremap = true, silent = true })
 end
 
 return M

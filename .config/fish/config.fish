@@ -37,9 +37,12 @@ function fish_greeting
   printf "-----------------------------------------------------------\n"
 end
 
+# Read functions recursively
 set fish_function_path \
     ~/.config/fish/functions/*/ \
     $fish_function_path
+
+starship init fish | source
 
 ### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
 set --export --prepend PATH "/Users/jonaserhart/.rd/bin"
