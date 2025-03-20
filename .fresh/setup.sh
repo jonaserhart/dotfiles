@@ -36,9 +36,21 @@ if test ! $(which neovide); then
 fi
 
 if test ! $(which go); then
+  echo 'installing golang...'
   brew install go
   go --version
 fi
+
+if test ! $(which task); then
+  echo 'installing taskwarrior and tui...'
+  brew install task
+  task --version
+  if test ! $(which taskwarrior-tui); then
+    brew install taskwarrior-tui
+    taskwarrior-tui --version
+  fi
+fi
+
 
 if test ! $(which wezterm); then
   brew install --cask wezterm
