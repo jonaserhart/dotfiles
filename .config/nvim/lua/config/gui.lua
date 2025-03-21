@@ -1,8 +1,8 @@
 local M = {}
 
 function M.setup()
-  vim.opt.linespace = 30
-  vim.o.guifont = "Monaspace Argon:h14"
+  vim.opt.linespace = 20
+  vim.o.guifont = "Monaspace Argon:h15"
   vim.opt.fillchars = {
     horiz = " ",
     horizup = " ",
@@ -47,6 +47,8 @@ function M.setup()
     end
   end, {})
   vim.api.nvim_set_keymap("n", "<D-t>", ":NewWezterm<CR>", { noremap = true, silent = true })
+
+  vim.g.floaterm_borderchars = "        "
 end
 
 return M
