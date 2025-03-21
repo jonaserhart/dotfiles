@@ -45,16 +45,8 @@ return {
       org_agenda_custom_commands = custom_commands,
       org_todo_keywords = {
         "TODO",
-        "DOING",
-        "WAITING",
-        "REVIEW",
         "|",
         "DONE",
-      },
-      org_todo_keyword_faces = {
-        DOING = ":foreground #98adec :weight bold",
-        WAITING = ":foreground #f4cc73  :weight bold",
-        REVIEW = ":foreground #f4ccf3  :weight bold",
       },
       notifications = {
         enabled = true,
