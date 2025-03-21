@@ -15,7 +15,7 @@ return {
           name = "Go",
         },
       },
-      color_icons = true,
+      color_icons = false,
       override_by_filename = {},
       override_by_extension = {},
     })

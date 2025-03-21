@@ -2,7 +2,7 @@ local M = {}
 
 function M.setup()
   vim.opt.linespace = 20
-  vim.o.guifont = "Monaspace Argon:h15"
+  vim.o.guifont = "Monaspace Neon Light:h14"
   vim.opt.fillchars = {
     horiz = " ",
     horizup = " ",

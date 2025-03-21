@@ -1,8 +1,8 @@
 return {
-  'mvllow/modes.nvim',
-  tag = 'v0.2.1',
+  "mvllow/modes.nvim",
+  tag = "v0.2.1",
   config = function()
-    require('modes').setup({
+    require("modes").setup({
       colors = {
         bg = "",
         copy = "#f5c359",
@@ -19,9 +19,9 @@ return {
 
       -- Enable cursorline initially, and disable cursorline for inactive windows
       -- or ignored filetypes
-      set_cursorline = true,
+      set_cursorline = false,
 
-      ignore_filetypes = { 'NvimTree', 'TelescopePrompt' }
+      ignore_filetypes = { "NvimTree", "TelescopePrompt" },
     })
-  end
+  end,
 }

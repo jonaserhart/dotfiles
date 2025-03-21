@@ -90,6 +90,12 @@ return {
         size = { width = 0.25 },
       },
       {
+        title = "Tasks",
+        ft = "neowarrior",
+        open = "NeowarriorOpen",
+        size = { width = 0.3 },
+      },
+      {
         title = "Commit",
         ft = "NeogitStatus",
         filter = function(_, win)

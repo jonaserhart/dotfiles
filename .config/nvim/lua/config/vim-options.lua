@@ -54,7 +54,6 @@ end)
 vim.opt.termguicolors = true
 vim.opt.number = true
 vim.opt.signcolumn = "yes"
-vim.opt.cursorline = true
 vim.opt.laststatus = 3
 vim.opt.cmdheight = 0
 vim.opt.fillchars = {

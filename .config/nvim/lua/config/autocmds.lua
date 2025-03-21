@@ -6,22 +6,12 @@ function M.setup_auto_cmds()
     desc = "Override file and folder icons of nvim-tree",
     callback = function()
       -- Set folder and file icon colors
-      -- vim.api.nvim_set_hl(0, "NvimTreeFolderIcon", { fg = "#A9AFBC" })
-      -- vim.api.nvim_set_hl(0, "NvimTreeFileIcon", { fg = "#A9AFBC" })
-      -- vim.api.nvim_set_hl(0, "NvimTreeFolderName", { fg = "#A9AFBC" })
-      -- vim.api.nvim_set_hl(0, "NvimTreeRootFolder", { fg = "#A9AFBC" })
-      -- vim.api.nvim_set_hl(0, "NvimTreeOpenedFile", { fg = "#A9AFBC", bold = true })
-      -- vim.api.nvim_set_hl(0, "NvimTreeOpenedFolderName", { fg = "#A9AFBC", bold = true })
-      -- vim.api.nvim_set_hl(0, "NvimTreeOpenedHL", { fg = "#A9AFBC", bold = true })
-      -- vim.api.nvim_set_hl(0, "NvimTreeNormal", { link = "EdgyNormal" })
-      -- vim.api.nvim_set_hl(0, "NvimTreeNormalNC", { link = "EdgyNormal" })
-      --
-      vim.api.nvim_set_hl(0, "NeoTreeDirectoryIcon", { fg = "#C4CFF6" })
-      vim.api.nvim_set_hl(0, "NeoTreeDirectoryName", { fg = "#C4CFF6" })
-      vim.api.nvim_set_hl(0, "NeoTreeGitUntracked", { fg = "#C4CFF6" })
+      vim.api.nvim_set_hl(0, "NeoTreeDirectoryIcon", { fg = "#acb2be" })
+      vim.api.nvim_set_hl(0, "NeoTreeDirectoryName", { fg = "#acb2be" })
+      vim.api.nvim_set_hl(0, "NeoTreeGitUntracked", { fg = "#acb2be" })
       vim.api.nvim_set_hl(0, "NeoTreeNormalNC", { link = "EdgyNormal" })
+      vim.api.nvim_set_hl(0, "LspInlayHint", { link = "@comment" })
       vim.api.nvim_set_hl(0, "PmenuSel", { fg = "#bdd3ff", bg = "#3b3f52" })
-      -- vim.api.nvim_set_hl(0, "GitSignsCurrentLineBlame", { bg = "#2D313C", fg = "#5c6370" })
     end,
   })
 

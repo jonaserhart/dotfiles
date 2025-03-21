@@ -4,10 +4,7 @@ local config = wezterm.config_builder()
 
 config.font = wezterm.font_with_fallback({
   {
-    family = "Zed Mono Extended",
-  },
-  {
-    family = "Monaspace Neon",
+    family = "Monaspace Neon Light",
   },
   {
     family = "Go Mono for Powerline",

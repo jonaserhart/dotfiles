@@ -47,14 +47,14 @@ return {
   { "williamboman/mason.nvim",                         import = "plugins.config.mason" },
   { "nvimtools/none-ls.nvim",                          import = "plugins.config.null-ls" },
 
-  -- Org
+  -- Organization
   { "nvim-orgmode/orgmode",                            import = "plugins.config.org" },
   { "natecraddock/workspaces.nvim",                    import = "plugins.config.workspaces" },
-  { "Dan7h3x/LazyDo",                                  import = "plugins.config.lazydo" },
+  { "duckdm/neowarrior.nvim",                          import = "plugins.config.taskwarrior" },
 
   -- Terminal
   { "akinsho/toggleterm.nvim",                         import = "plugins.config.terminal" },
-  { 'voldikss/vim-floaterm', },
+  { "voldikss/vim-floaterm" },
 
   -- Language-specific
   { import = "plugins.config.languages.go.plugins" },
