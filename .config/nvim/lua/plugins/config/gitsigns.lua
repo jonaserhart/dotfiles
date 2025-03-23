@@ -17,6 +17,8 @@ return {
         map("v", "<leader>gss", ":Gitsigns stage_hunk<CR>")
         map("v", "<leader>gsu", ":Gitsigns undo_stage_hunk<CR>")
         map("n", "<leader>gsd", ":Gitsigns diffthis<CR>")
+        map("v", "<leader>gsp", ":Gitsigns preview_hunk<CR>")
+        map({ "n", "v" }, "<leader>gsn", ":Gitsigns next_hunk<CR>")
       end,
     })
   end,
