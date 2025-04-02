@@ -29,7 +29,7 @@ vim.api.nvim_set_keymap("n", "<C-k>", "<C-w>k", { noremap = true, silent = true 
 vim.api.nvim_set_keymap("n", "<C-l>", "<C-w>l", { noremap = true, silent = true })
 
 vim.diagnostic.config({
-  virtual_text = true,
+  virtual_lines = true,
   signs = {
     text = {
       [vim.diagnostic.severity.ERROR] = "",
@@ -66,6 +66,9 @@ vim.opt.fillchars = {
   verthoriz = "╋",
   eob = " ",
 }
+
+-- lsp
+require("config.lsp-config").setup()
 
 -- setup gui
 

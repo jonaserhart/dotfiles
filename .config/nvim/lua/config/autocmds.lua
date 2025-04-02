@@ -12,6 +12,22 @@ function M.setup_auto_cmds()
       vim.api.nvim_set_hl(0, "NeoTreeNormalNC", { link = "EdgyNormal" })
       vim.api.nvim_set_hl(0, "LspInlayHint", { link = "@comment" })
       vim.api.nvim_set_hl(0, "PmenuSel", { fg = "#bdd3ff", bg = "#3b3f52" })
+      vim.g.terminal_color_0 = "#acb2be"
+      vim.g.terminal_color_1 = "#acb2be"
+      vim.g.terminal_color_2 = "#acb2be"
+      vim.g.terminal_color_3 = "#acb2be"
+      vim.g.terminal_color_4 = "#acb2be"
+      vim.g.terminal_color_5 = "#acb2be"
+      vim.g.terminal_color_6 = "#acb2be"
+      vim.g.terminal_color_7 = "#acb2be"
+      vim.g.terminal_color_8 = "#acb2be"
+      vim.g.terminal_color_9 = "#acb2be"
+      vim.g.terminal_color_10 = "#acb2be"
+      vim.g.terminal_color_11 = "#acb2be"
+      vim.g.terminal_color_12 = "#acb2be"
+      vim.g.terminal_color_13 = "#acb2be"
+      vim.g.terminal_color_14 = "#acb2be"
+      vim.g.terminal_color_15 = "#acb2be"
     end,
   })
 

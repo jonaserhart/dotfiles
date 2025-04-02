@@ -45,5 +45,5 @@ set fish_function_path \
 starship init fish | source
 
 ### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
-set --export --prepend PATH "/Users/jonaserhart/.rd/bin"
+set --export --prepend PATH "/Users/jonas.erhart/.rd/bin"
 ### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)

@@ -40,6 +40,8 @@ return {
       org_default_notes_file = (org_files_path .. "refile.org"),
       org_src_window_setup = "top 40new",
       org_agenda_min_height = 10,
+      win_split_mode = 'vertical',
+      win_border = 'none',
       org_agenda_filter = "/",
       org_capture_templates = org_cap_templates,
       org_agenda_custom_commands = custom_commands,

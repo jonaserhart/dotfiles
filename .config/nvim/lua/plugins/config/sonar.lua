@@ -1,6 +1,7 @@
 return {
   url = "https://gitlab.com/schrieveslaach/sonarlint.nvim",
   ft = { "go" },
+  enabled = false,
   dependencies = {
     "williamboman/mason.nvim"
   },
