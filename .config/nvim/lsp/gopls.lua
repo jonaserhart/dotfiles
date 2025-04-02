@@ -1,6 +1,6 @@
 return {
   cmd = { "gopls" },
-  fileypes = { "go", "gomod" },
+  filetypes = { "go", "gomod" },
   root_markers = {
     "go.mod",
     "main.go"
@@ -16,13 +16,6 @@ return {
         functionTypeParameters = true,
         parameterNames = true,
         rangeVariableTypes = true,
-      },
-      codelenses = {
-        generate = true,
-        gc_details = true,
-        test = true,
-        tidy = true,
-        regenerate_cgo = true,
       },
       staticcheck = true,
       gofumpt = true,
