@@ -27,7 +27,15 @@ return {
         target = org_files_path .. "todos.org",
         properties = { before = 2, after = 2 },
       },
-      n = { description = "note", template = "note%?", target = org_files_path .. "notes.org" },
+      n = {
+        description = "note",
+        template = "note%?",
+        datetree = {
+          tree_type = "week",
+          time_prompt = true
+        },
+        target = org_files_path .. "notes.org"
+      },
     }
 
     local custom_capture_templates = config_utils.get_custom_config("custom_org_cap_templates", {})

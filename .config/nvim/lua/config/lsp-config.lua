@@ -31,7 +31,15 @@ function M.setup()
     root_markers = { '.git' },
   })
 
-  vim.lsp.enable({ "gopls", "lua" })
+  vim.lsp.enable({
+    "gopls",
+    "helm",
+    "yaml",
+    "typescript",
+    "eslint",
+    "bash",
+    "lua",
+  })
 end
 
 return M

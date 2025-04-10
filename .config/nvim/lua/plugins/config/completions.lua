@@ -21,7 +21,7 @@ return {
     -- 'super-tab' for mappings similar to vscode (tab to accept, arrow keys to navigate)
     -- 'enter' for mappings similar to 'super-tab' but with 'enter' to accept
     -- See the full "keymap" documentation for information on defining your own keymap.
-    keymap = { preset = "super-tab" },
+    keymap = { preset = "enter" },
 
     signature = { enabled = true },
     completion = {
@@ -63,7 +63,7 @@ return {
     },
   },
   config = function(_, opts)
-    -- require("luasnip.loaders.from_vscode").lazy_load()
+    require("luasnip.loaders.from_vscode").lazy_load()
 
     require("config.utils").req_custom_module("snippets")
     require("blink.cmp").setup(opts)
