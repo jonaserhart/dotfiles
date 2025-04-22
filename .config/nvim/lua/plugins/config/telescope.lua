@@ -24,6 +24,7 @@ return {
   config = function(_, opts)
     require("telescope").setup(opts)
     require("telescope").load_extension("cmdline")
+
     local builtin = require("telescope.builtin")
     vim.keymap.set("n", "<C-p>", builtin.find_files, { noremap = true, desc = "Find files" })
     vim.keymap.set(
@@ -43,7 +44,7 @@ return {
       "n",
       "<leader>lw",
       builtin.lsp_dynamic_workspace_symbols,
-      { noremap = true, desc = "Symbold (workspace)" }
+      { noremap = true, desc = "Symbols (workspace)" }
     )
     vim.keymap.set("n", "<leader>tb", ":Telescope buffers<CR>", { noremap = true, desc = "Buffers" })
     vim.keymap.set("n", "<leader><leader>", ":Telescope cmdline<CR>", { noremap = true, desc = "Execute command" })

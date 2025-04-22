@@ -16,6 +16,10 @@ vim.cmd("imap <silent><expr> <Tab> luasnip#expand_or_jumpable() ? '<Plug>luasnip
 require("config.signs").setup_signs()
 require("config.autocmds").setup_auto_cmds()
 
+-- spellcheck
+vim.opt.spell = true
+vim.opt.spelllang = "en_us"
+
 -- folding
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
@@ -32,10 +36,10 @@ vim.diagnostic.config({
   virtual_lines = { current_line = true },
   signs = {
     text = {
-      [vim.diagnostic.severity.ERROR] = "❌",
-      [vim.diagnostic.severity.WARN] = "⚠️",
-      [vim.diagnostic.severity.INFO] = "ℹ️",
-      [vim.diagnostic.severity.HINT] = "💡",
+      [vim.diagnostic.severity.ERROR] = "󰰱",
+      [vim.diagnostic.severity.WARN] = "",
+      [vim.diagnostic.severity.INFO] = "󰋼",
+      [vim.diagnostic.severity.HINT] = "󰛨",
     },
     linehl = {
       [vim.diagnostic.severity.ERROR] = "ErrorMsg",
@@ -57,14 +61,14 @@ vim.opt.signcolumn = "yes"
 vim.opt.laststatus = 3
 vim.opt.cmdheight = 0
 vim.opt.fillchars = {
-  horiz = "━",
-  horizup = "┻",
-  horizdown = "┳",
-  vert = "┃",
-  vertleft = "┫",
-  vertright = "┣",
-  verthoriz = "╋",
+  vert = "│",
+  fold = " ",
   eob = " ",
+  diff = "╱",
+  msgsep = "‾",
+  foldopen = "▾",
+  foldsep = "│",
+  foldclose = "▸",
 }
 
 -- lsp

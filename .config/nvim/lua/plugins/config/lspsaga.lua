@@ -4,6 +4,7 @@ return {
     require("lspsaga").setup({
       ui = {
         border = "none",
+        code_action = '󰛨'
       },
       lightbulb = {
         -- enable = false

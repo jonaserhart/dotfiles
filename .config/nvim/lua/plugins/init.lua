@@ -16,6 +16,7 @@ return {
   { "OXY2DEV/markview.nvim",                   import = "plugins.config.markdown-preview" },
   { "nvim-tree/nvim-web-devicons",             import = "plugins.config.icons" },
   { "mvllow/modes.nvim",                       import = "plugins.config.modes" },
+  -- { "lukas-reineke/indent-blankline.nvim",     import = "plugins.config.blankline" },
   -- { "nvim-treesitter/nvim-treesitter-context",         import = "plugins.config.treesitter-context" },
 
   -- Completion

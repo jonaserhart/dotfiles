@@ -14,6 +14,12 @@ function M.setup()
     eob = " ",
   }
 
+  -- system clipboard
+  vim.keymap.set('n', '<D-v>', '"+P')         -- Paste normal mode
+  vim.keymap.set('v', '<D-v>', '"+P')         -- Paste visual mode
+  vim.keymap.set('c', '<D-v>', '<C-R>+')      -- Paste command mode
+  vim.keymap.set('i', '<D-v>', '<ESC>l"+Pli') -- Paste insert mode
+
   vim.g.neovide_text_gamma = 0.8
   vim.g.neovide_text_contrast = 0.5
 
@@ -37,8 +43,8 @@ function M.setup()
   end, {})
   vim.api.nvim_set_keymap("n", "<D-n>", ":NewNeovide<CR>", { noremap = true, silent = true })
 
-  vim.api.nvim_create_user_command("NewWezterm", function()
-    local command = "open -n -a WezTerm"
+  vim.api.nvim_create_user_command("NewWeztermHere", function()
+    local command = "wezterm cli spawn --new-window --cwd '" .. vim.fn.getcwd() .. "'"
     local handle = io.popen(command)
     if handle then
       handle:close()
@@ -46,7 +52,7 @@ function M.setup()
       print("Failed to open WezTerm")
     end
   end, {})
-  vim.api.nvim_set_keymap("n", "<D-t>", ":NewWezterm<CR>", { noremap = true, silent = true })
+  vim.api.nvim_set_keymap("n", "<D-t>", ":NewWeztermHere<CR>", { noremap = true, silent = true })
 
   vim.g.floaterm_borderchars = "        "
 end

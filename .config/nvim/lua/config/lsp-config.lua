@@ -33,6 +33,7 @@ function M.setup()
 
   vim.lsp.enable({
     "gopls",
+    "golangci-lint",
     "helm",
     "yaml",
     "typescript",
