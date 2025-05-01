@@ -3,16 +3,6 @@ local M = {}
 function M.setup()
   vim.opt.linespace = 20
   vim.o.guifont = "Monaspace Neon Light:h15"
-  vim.opt.fillchars = {
-    horiz = " ",
-    horizup = " ",
-    horizdown = " ",
-    vert = " ",
-    vertleft = " ",
-    vertright = " ",
-    verthoriz = " ",
-    eob = " ",
-  }
 
   -- system clipboard
   vim.keymap.set('n', '<D-v>', '"+P')         -- Paste normal mode
@@ -27,7 +17,8 @@ function M.setup()
   vim.g.neovide_floating_z_height = 20
   vim.g.neovide_light_angle_degrees = 45
   vim.g.neovide_light_radius = 20
-  vim.g.neovide_floating_corner_radius = 0.2
+  vim.g.neovide_floating_corner_radius = 0.25
+  vim.g.neovide_box_drawing_mode = "native"
 
   vim.g.neovide_input_macos_option_key_is_meta = "only_left"
 

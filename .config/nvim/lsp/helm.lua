@@ -3,5 +3,27 @@ return {
   filetypes = { 'helm' },
   root_markers = {
     "Chart.yaml"
+  },
+  settings = {
+    ['helm-ls'] = {
+      yamlls = {
+        config = {
+          validate = true,
+          completion = true,
+          format = {
+            enable = true,
+          },
+          hover = true,
+          schemas = {
+            ["https://raw.githubusercontent.com/argoproj/argo-workflows/master/api/jsonschema/schema.json"] = {
+              -- Pattern to match Argo Workflow files
+              "templates/*workflow*.yaml",
+              "templates/*workflow*.yml",
+              -- You can add more patterns if needed
+            }
+          }
+        }
+      }
+    }
   }
 }
