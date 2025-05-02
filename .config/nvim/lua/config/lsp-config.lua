@@ -35,7 +35,7 @@ function M.setup()
     "golangci-lint",
     "gopls",
     "helm",
-    "yaml",
+    -- "yaml",
     "typescript",
     "eslint",
     "bash",

@@ -1,12 +1,13 @@
 return {
   cmd = { "helm_ls", "serve" },
-  filetypes = { 'helm' },
+  filetypes = { 'helm', 'yaml' },
   root_markers = {
     "Chart.yaml"
   },
   settings = {
     ['helm-ls'] = {
       yamlls = {
+        showDiagnosticsDirectly = true,
         config = {
           validate = true,
           completion = true,
@@ -17,13 +18,13 @@ return {
           schemas = {
             ["https://raw.githubusercontent.com/argoproj/argo-workflows/master/api/jsonschema/schema.json"] = {
               -- Pattern to match Argo Workflow files
-              "templates/*workflow*.yaml",
-              "templates/*workflow*.yml",
-              -- You can add more patterns if needed
+              "templates/**/*workflow*.yaml",
+              "templates/**/*workflow*.yml",
             }
           }
         }
       }
     }
   }
+
 }
