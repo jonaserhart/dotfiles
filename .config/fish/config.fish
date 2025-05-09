@@ -4,7 +4,7 @@
 set -g theme_nerd_fonts yes
 set -g theme_color_scheme nord
 
-set -g EDITORi VIM
+set -g EDITOR nvim
 
 
 alias k="kubectl"
