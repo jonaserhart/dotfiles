@@ -8,6 +8,7 @@ return {
     "nvim-treesitter/nvim-treesitter",
     "nvim-neotest/neotest-plenary",
     "nvim-neotest/neotest-vim-test",
+    'nvim-neotest/neotest-jest',
     {
       "fredrikaverpil/neotest-golang",
       dependencies = {
@@ -15,41 +16,34 @@ return {
           "leoluz/nvim-dap-go",
           opts = {},
         },
-        {
-          'nvim-neotest/neotest-jest',
-        },
       },
       branch = "main",
     },
   },
   config = function()
-    vim.api.nvim_create_autocmd("User", {
-      pattern = "WorkspacesOpen",
-      callback = function()
-        local gotest = {
-          go_test_args = {
-            "-v",
-            "-race",
-            "-count=1",
-            "-coverprofile=" .. vim.fn.getcwd() .. "/coverage.out",
-          },
-        }
+    local gotest = {
+      runner = "gotestsum",
+      go_test_args = {
+        "--tags=e2e,integration",
+        "-v",
+        "-race",
+        "-count=1",
+        "-coverprofile=" .. vim.fn.getcwd() .. "/cover.out",
+      },
+    }
 
-        require("neotest").setup({
-          adapters = {
-            require("neotest-golang")(gotest),
-            require('neotest-jest')({
-              jestCommand = "npm test --",
-              jestConfigFile = "jest.config.js",
-              env = { CI = true },
-              cwd = function(_)
-                return vim.fn.getcwd()
-              end,
-            }),
-
-          },
+    require("neotest").setup({
+      adapters = {
+        require("neotest-golang")(gotest),
+        require('neotest-jest')({
+          jestCommand = "npm test --",
+          jestConfigFile = "jest.config.js",
+          env = { CI = true },
+          cwd = function(_)
+            return vim.fn.getcwd()
+          end,
         })
-      end
+      }
     })
   end,
   keys = {

@@ -95,7 +95,14 @@ return {
 
             -- MacOS
             if vim.fn.executable('terminal-notifier') == 1 then
-              vim.fn.system({ 'terminal-notifier', '-title', title, '-subtitle', subtitle, '-message', date })
+              vim.fn.system({
+                'terminal-notifier',
+                '-title', title,
+                '-subtitle', subtitle,
+                '-message', date,
+                '-execute', 'wezterm cli spawn --new-window nvim +' ..
+              task.range.start_line .. ' "' .. task.file .. '"'
+              })
             end
           end
         end

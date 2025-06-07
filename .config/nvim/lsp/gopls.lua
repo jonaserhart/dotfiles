@@ -8,6 +8,7 @@ return {
   settings = {
     gopls = {
       experimentalPostfixCompletions = true,
+      buildFlags = { "-tags=e2e,integration" },
       hints = {
         assignVariableTypes = true,
         compositeLiteralFields = true,

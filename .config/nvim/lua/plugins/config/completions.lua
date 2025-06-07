@@ -1,6 +1,6 @@
 return {
   "saghen/blink.cmp",
-  dependencies = { "rafamadriz/friendly-snippets", { "L3MON4D3/LuaSnip", version = "v2.*" } },
+  dependencies = { "rafamadriz/friendly-snippets", "moyiz/blink-emoji.nvim", { "L3MON4D3/LuaSnip", version = "v2.*" } },
   enabled = function()
     return not vim.tbl_contains({ "markdown" }, vim.bo.filetype)
         and vim.bo.buftype ~= "prompt"
@@ -49,9 +49,10 @@ return {
     -- Default list of enabled providers defined so that you can extend it
     -- elsewhere in your config, without redefining it, due to `opts_extend`
     sources = {
-      default = { "lsp", "path", "snippets" },
+      default = { "lsp", "path", "snippets", "emoji" },
       per_filetype = {
         org = { "orgmode", "snippets" },
+        gitcommit = { "snippets" },
       },
       providers = {
         orgmode = {
@@ -59,6 +60,20 @@ return {
           module = "orgmode.org.autocompletion.blink",
           fallbacks = { "buffer" },
         },
+        emoji = {
+          module = "blink-emoji",
+          name = "Emoji",
+          score_offset = 15,        -- Tune by preference
+          opts = { insert = true }, -- Insert emoji (default) or complete its name
+          -- should_show_items = function()
+          --   return vim.tbl_contains(
+          --   -- Enable emoji completion only for git commits and markdown.
+          --   -- By default, enabled for all file-types.
+          --     { "gitcommit", "markdown" },
+          --     vim.o.filetype
+          --   )
+          -- end,
+        }
       },
     },
   },
@@ -66,6 +81,8 @@ return {
     require("luasnip.loaders.from_vscode").lazy_load()
 
     require("config.utils").req_custom_module("snippets")
-    require("blink.cmp").setup(opts)
+
+    local blink = require("blink.cmp")
+    blink.setup(opts)
   end,
 }

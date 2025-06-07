@@ -75,8 +75,12 @@ vim.opt.fillchars = {
 -- lsp
 require("config.lsp-config").setup()
 
+
 -- setup gui
 
 if vim.g.neovide then
   require("config.gui").setup()
 end
+
+local environment = os.getenv("NVIMENV") or "private"
+vim.notify("NVIMENV: " .. environment)
