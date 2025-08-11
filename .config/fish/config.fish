@@ -4,7 +4,7 @@
 set -g theme_nerd_fonts yes
 set -g theme_color_scheme nord
 
-set -g EDITORi VIM
+set -g EDITOR nvim
 
 
 alias k="kubectl"
@@ -45,5 +45,5 @@ set fish_function_path \
 starship init fish | source
 
 ### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
-set --export --prepend PATH "/Users/jonaserhart/.rd/bin"
+set --export --prepend PATH "/Users/jonas.erhart/.rd/bin"
 ### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
