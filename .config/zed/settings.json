@@ -7,6 +7,39 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "agent": {
+    "enabled": false
+  },
+  "language_models": {
+    "anthropic": {
+      "api_url": ""
+    },
+    "google": {
+      "api_url": ""
+    },
+    "ollama": {
+      "api_url": ""
+    },
+    "openai": {
+      "api_url": ""
+    },
+    "open_router": {
+      "api_url": ""
+    },
+    "lmstudio": {
+      "api_url": ""
+    },
+    "deepseek": {
+      "api_url": ""
+    },
+    "mistral": {
+      "api_url": ""
+    }
+  },
+  "icon_theme": "Catppuccin Frappé",
+  "features": {
+    "edit_prediction_provider": "copilot"
+  },
   "outline_panel": {
     "dock": "right"
   },
@@ -15,8 +48,8 @@
     "diagnostics": false
   },
   "vim_mode": true,
-  "ui_font_size": 16,
-  "buffer_font_size": 16,
+  "ui_font_size": 18,
+  "buffer_font_size": 14,
   "buffer_font_family": "Monaspace Neon",
   "project_panel": {
     "show_diagnostics": "all",
@@ -31,7 +64,7 @@
   "theme": {
     "mode": "system",
     "light": "One Light",
-    "dark": "One Dark"
+    "dark": "Catppuccin Macchiato (Blur) [Heavy]"
   },
   "lsp": {
     "golangci-lint": {

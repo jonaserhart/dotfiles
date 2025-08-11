@@ -15,7 +15,8 @@
       "ctrl-h": "workspace::ActivatePaneLeft",
       "ctrl-l": "workspace::ActivatePaneRight",
       "ctrl-k": "workspace::ActivatePaneUp",
-      "ctrl-j": "workspace::ActivatePaneDown"
+      "ctrl-j": "workspace::ActivatePaneDown",
+      "ctrl-q": "workspace::CloseActiveDock"
     }
   },
   {
@@ -91,7 +92,7 @@
       // Close active panel
       "space a q": "pane::CloseActiveItem",
       // Close other items
-      "space a T": "pane::CloseInactiveItems",
+      "space a T": "pane::CloseOtherItems",
       // File finder
       "ctrl-p": "file_finder::Toggle",
       // Project search

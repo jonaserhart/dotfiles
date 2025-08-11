@@ -14,6 +14,9 @@
 !/.config/omf/
 !/.config/ranger/
 /.config/nvim/lua/custom/**/*
+!/.config/zed/
+/.config/zed/conversations/**/*
+/.config/zed/prompts/**/*
 
 !/.dotfiles-setup/
 !/.git-templates/
