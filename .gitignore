@@ -2,16 +2,13 @@
 
 !/.gitignore
 !/.config/
-!/.zshrc
 !/.wezterm.lua
 !/.vimrc
+!/.bashrc
 
 /.config/*
 !/.config/nvim/
 !/.config/starship.toml
-!/.config/fish/
-/.config/fish/functions/private/**/*
-!/.config/omf/
 !/.config/ranger/
 /.config/nvim/lua/custom/**/*
 !/.config/zed/

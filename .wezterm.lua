@@ -5,6 +5,7 @@ local config = wezterm.config_builder()
 config.font = wezterm.font_with_fallback({
 	{
 		family = "Monaspace Neon",
+		harfbuzz_features = { "liga=0", "calt=0", "dlig=0" },
 	},
 })
 
