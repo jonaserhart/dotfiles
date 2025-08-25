@@ -5,6 +5,7 @@
 !/.wezterm.lua
 !/.vimrc
 !/.bashrc
+!/.inputrc
 
 /.config/*
 !/.config/nvim/
