@@ -73,8 +73,9 @@
       "] e": "editor::GoToDiagnostic",
       "[ e": "editor::GoToPreviousDiagnostic",
       // Symbol search
-      "s s": "outline::Toggle",
-      "s S": "project_symbols::Toggle",
+      "space s s": "outline::Toggle",
+      "space s p": "project_symbols::Toggle",
+      "space s o": "outline_panel::ToggleFocus",
       // Diagnostic
       "space x x": "diagnostics::Deploy",
 
@@ -190,21 +191,12 @@
       "ctrl-j": "workspace::ActivatePaneDown"
     }
   },
-  // Panel nagivation
-  {
-    "context": "Dock",
-    "bindings": {
-      "ctrl-w h": "workspace::ActivatePaneLeft",
-      "ctrl-w l": "workspace::ActivatePaneRight",
-      "ctrl-w k": "workspace::ActivatePaneUp",
-      "ctrl-w j": "workspace::ActivatePaneDown"
-    }
-  },
   {
     "context": "Workspace",
     "bindings": {
-      // Map VSCode like keybindings
-      "cmd-b": "workspace::ToggleRightDock"
+      "cmd-b": "workspace::ToggleRightDock",
+      // rotate between panes
+      "ctrl-b": "pane::ActivateNextItem"
     }
   },
   // Run nearest task

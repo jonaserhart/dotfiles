@@ -13,9 +13,9 @@ return {
 	{ "folke/edgy.nvim", import = "plugins.config.edgy" },
 	{ "folke/todo-comments.nvim", import = "plugins.config.todo" },
 	{ "s1n7ax/nvim-window-picker", import = "plugins.config.windowpicker" },
-	{ "OXY2DEV/markview.nvim", import = "plugins.config.markdown-preview" },
 	{ "nvim-tree/nvim-web-devicons", import = "plugins.config.icons" },
 	{ "mvllow/modes.nvim", import = "plugins.config.modes" },
+	{ "folke/noice.nvim", import = "plugins.config.noice" },
 	-- { "lukas-reineke/indent-blankline.nvim",     import = "plugins.config.blankline" },
 	-- { "nvim-treesitter/nvim-treesitter-context",         import = "plugins.config.treesitter-context" },
 
@@ -54,7 +54,6 @@ return {
 
 	-- Terminal
 	{ "akinsho/toggleterm.nvim", import = "plugins.config.terminal" },
-	{ "voldikss/vim-floaterm" },
 
 	-- Util
 	{ "willothy/wezterm.nvim", import = "plugins.config.wezterm" },

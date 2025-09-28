@@ -3,7 +3,6 @@ return {
 	config = function()
 		require("lspsaga").setup({
 			ui = {
-				border = "none",
 				code_action = "󰛨",
 			},
 			lightbulb = {

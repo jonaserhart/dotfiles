@@ -3,6 +3,14 @@ return {
 	event = "VeryLazy",
 	enable = true,
 	init = function() end,
+	config = function(_, opts)
+		require("edgy").setup(opts)
+		-- require("edgy").toggle()
+		vim.cmd([[ 
+hi EdgyNormal guibg=NONE ctermbg=NONE
+hi EdgyNormalNC guibg=NONE ctermbg=NONE
+    ]])
+	end,
 	opts = {
 		icons = {
 			closed = "",

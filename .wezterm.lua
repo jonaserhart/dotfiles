@@ -4,8 +4,12 @@ local config = wezterm.config_builder()
 
 config.font = wezterm.font_with_fallback({
 	{
-		family = "Monaspace Neon",
+		family = "JetBrains Mono",
 		harfbuzz_features = { "liga=0", "calt=0", "dlig=0" },
+	},
+	{
+		family = "Monaspace Neon",
+		-- harfbuzz_features = { "liga=0", "calt=0", "dlig=0" },
 	},
 })
 
@@ -22,16 +26,16 @@ config.initial_rows = 24
 config.color_scheme = "OneDark (base16)"
 
 config.window_background_opacity = 0.9
-config.macos_window_background_blur = 20
+config.macos_window_background_blur = 25
 
 config.window_padding = {
-	left = 0,
-	right = 0,
-	top = 0,
-	bottom = 0,
+	left = 3,
+	right = 3,
+	top = 3,
+	bottom = 3,
 }
 
-config.line_height = 1.6
+config.line_height = 1.45
 
 -- Keys
 config.send_composed_key_when_left_alt_is_pressed = true
