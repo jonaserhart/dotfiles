@@ -22,7 +22,7 @@ vim.opt.spelllang = "en_us"
 
 -- folding
 vim.opt.foldmethod = "expr"
-vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 vim.opt.foldenable = false
 vim.api.nvim_command("autocmd BufReadPost,FileReadPost * normal zR")
 

@@ -31,6 +31,13 @@ hi EndOfBuffer guibg=NONE ctermbg=NONE
 ]])
 		end,
 	})
+
+	vim.api.nvim_create_autocmd("FileType", {
+		pattern = { "go", "lua", "yaml", "json", "markdown", "rust", "python", "vim", "sh" },
+		callback = function()
+			vim.treesitter.start()
+		end,
+	})
 end
 
 return M
