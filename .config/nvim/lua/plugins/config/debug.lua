@@ -7,9 +7,18 @@ return {
 		{
 			"theHamsta/nvim-dap-virtual-text",
 		},
+		{
+			"leoluz/nvim-dap-go",
+		},
 	},
 	config = function()
 		local dap = require("dap")
+
+		-- Language specific debuggers
+		require("dap-go").setup()
+
+		-- DAP UI
+
 		local dapui = require("dapui")
 		local dapvirtualtext = require("nvim-dap-virtual-text")
 

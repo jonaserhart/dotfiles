@@ -8,15 +8,6 @@ if test ! $(which brew); then
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
-if test ! $(which fish); then
-  echo 'Installing fish...'
-  brew install fish
-  chsh -s $(which fish)
-  brew install starship
-  # My preferred preset
-  starship preset nerd-font-symbols -o ~/.config/starship.toml
-fi
-
 if test ! $(which nvim); then
   echo 'Installing nvim...'
   brew install neovim
@@ -27,12 +18,6 @@ if test ! $(which nvim); then
   touch $HOME/.profile.fish
   echo "set -g -x NVIMENV private" >> $HOME/.profile.fish
   echo "NVIMENV default is 'private', update .profile.fish if needed"
-fi
-
-if test ! $(which neovide); then
-  echo 'Installing neovim gui...'
-  brew install neovide
-  neovide --version
 fi
 
 if test ! $(which go); then

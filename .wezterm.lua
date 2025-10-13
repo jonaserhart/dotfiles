@@ -4,12 +4,12 @@ local config = wezterm.config_builder()
 
 config.font = wezterm.font_with_fallback({
 	{
-		family = "JetBrains Mono",
+		family = "Monaspace Neon",
 		harfbuzz_features = { "liga=0", "calt=0", "dlig=0" },
 	},
 	{
-		family = "Monaspace Neon",
-		-- harfbuzz_features = { "liga=0", "calt=0", "dlig=0" },
+		family = "JetBrains Mono",
+		harfbuzz_features = { "liga=0", "calt=0", "dlig=0" },
 	},
 })
 
@@ -26,7 +26,7 @@ config.initial_rows = 24
 config.color_scheme = "OneDark (base16)"
 
 config.window_background_opacity = 0.9
-config.macos_window_background_blur = 25
+config.macos_window_background_blur = 15
 
 config.window_padding = {
 	left = 3,
