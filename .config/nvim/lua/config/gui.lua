@@ -1,8 +1,8 @@
 local M = {}
 
 function M.setup()
-	vim.opt.linespace = 20
-	vim.o.guifont = "JetBrains Mono:h15"
+	vim.opt.linespace = 8
+	vim.o.guifont = "Monaspace Neon:h14"
 
 	-- system clipboard
 	vim.keymap.set("n", "<D-v>", '"+P') -- Paste normal mode
