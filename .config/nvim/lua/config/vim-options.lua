@@ -25,6 +25,7 @@ vim.opt.foldmethod = "expr"
 vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 vim.opt.foldenable = false
 vim.api.nvim_command("autocmd BufReadPost,FileReadPost * normal zR")
+vim.wo.relativenumber = true
 
 -- general keybindings: navigation
 vim.api.nvim_set_keymap("n", "<C-h>", "<C-w>h", { noremap = true, silent = true })
@@ -80,6 +81,3 @@ require("config.lsp-config").setup()
 if vim.g.neovide then
 	require("config.gui").setup()
 end
-
-local environment = os.getenv("NVIMENV") or "private"
-vim.notify("NVIMENV: " .. environment)

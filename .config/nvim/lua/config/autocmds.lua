@@ -29,6 +29,8 @@ function M.setup_auto_cmds()
   hi NeoTreeWinSeparator guibg=NONE ctermbg=NONE
   hi NeoTreeEndOfBuffer guibg=NONE ctermbg=NONE
   hi EndOfBuffer guibg=NONE ctermbg=NONE
+  hi NormalFloat guibg=NONE ctermbg=NONE
+  hi FloatBorder guibg=NONE ctermbg=NONE
   ]])
 			end
 		end,

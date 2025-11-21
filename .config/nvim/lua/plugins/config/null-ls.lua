@@ -12,7 +12,6 @@ return {
       null_ls.builtins.code_actions.gomodifytags,
       null_ls.builtins.code_actions.impl,
       null_ls.builtins.formatting.prettier,
-      diagnostics.semgrep,
     })
   end,
 }

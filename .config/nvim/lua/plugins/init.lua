@@ -16,8 +16,7 @@ return {
 	{ "nvim-tree/nvim-web-devicons", import = "plugins.config.icons" },
 	{ "mvllow/modes.nvim", import = "plugins.config.modes" },
 	{ "folke/noice.nvim", import = "plugins.config.noice" },
-	-- { "lukas-reineke/indent-blankline.nvim",     import = "plugins.config.blankline" },
-	-- { "nvim-treesitter/nvim-treesitter-context",         import = "plugins.config.treesitter-context" },
+	{ "lukas-reineke/indent-blankline.nvim", import = "plugins.config.blankline" },
 
 	-- Completion
 	{ "saghen/blink.cmp", import = "plugins.config.completions" },
@@ -25,11 +24,9 @@ return {
 	{ "github/copilot.vim", import = "plugins.config.copilot" },
 
 	-- Core LSP, DAP and Testing frameworks
-	{ "neovim/nvim-lspconfig", import = "plugins.config.lsp" },
 	{ "nvim-neotest/neotest", import = "plugins.config.testing" },
 	{ "andythigpen/nvim-coverage", import = "plugins.config.code-coverage" },
 	{ "mfussenegger/nvim-dap", import = "plugins.config.debug" },
-	{ "williamboman/mason-lspconfig.nvim", import = "plugins.config.mason-lspconfig" },
 	{ "nvimdev/lspsaga.nvim", import = "plugins.config.lspsaga" },
 	{ "sonarlint.nvim", import = "plugins.config.sonar" },
 
@@ -44,18 +41,14 @@ return {
 	{ "stevearc/conform.nvim", import = "plugins.config.conform" },
 
 	-- Binaries
-	{ "williamboman/mason.nvim", import = "plugins.config.mason" },
 	{ "nvimtools/none-ls.nvim", import = "plugins.config.null-ls" },
 
 	-- Organization
-	{ "nvim-orgmode/orgmode", import = "plugins.config.org" },
 	{ "natecraddock/workspaces.nvim", import = "plugins.config.workspaces" },
-	{ "duckdm/neowarrior.nvim", import = "plugins.config.taskwarrior" },
 
 	-- Terminal
 	{ "akinsho/toggleterm.nvim", import = "plugins.config.terminal" },
 
 	-- Util
 	{ "willothy/wezterm.nvim", import = "plugins.config.wezterm" },
-	{ "jellydn/hurl.nvim", import = "plugins.config.hurl" },
 }

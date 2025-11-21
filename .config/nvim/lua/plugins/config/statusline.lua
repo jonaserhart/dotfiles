@@ -15,6 +15,7 @@ return {
 					winbar = { "NvimTree" },
 				},
 				theme = "auto",
+        globalstatus = true,
 			},
 			sections = {
 				-- lualine_a = { { "mode", separator = { left = "" }, right_padding = 2 } },
