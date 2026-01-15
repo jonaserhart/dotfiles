@@ -45,6 +45,7 @@ return {
 
 	-- Organization
 	{ "natecraddock/workspaces.nvim", import = "plugins.config.workspaces" },
+  { "nvim-orgmode/orgmode", import = "plugins.config.org" },
 
 	-- Terminal
 	{ "akinsho/toggleterm.nvim", import = "plugins.config.terminal" },

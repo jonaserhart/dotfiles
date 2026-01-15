@@ -15,9 +15,19 @@ return {
 				key_hl = "Number",
 				action = "Telescope workspaces",
 				key = "w",
-				key_format = " %s",
+				key_format = "  %s",
 			},
 			table.unpack(custom_actions),
+			{
+				icon = "󱞁 ",
+				icon_hl = "Title",
+				desc = "Orgfiles",
+				desc_hl = "String",
+				key_hl = "Number",
+				action = "WorkspacesOpen org_files",
+				key = "o",
+				key_format = "  %s",
+			},
 			{
 				icon = " ",
 				icon_hl = "Title",
@@ -26,7 +36,7 @@ return {
 				key_hl = "Number",
 				action = "WorkspacesOpen nvim",
 				key = "c",
-				key_format = " %s",
+				key_format = "  %s",
 			},
 		}
 

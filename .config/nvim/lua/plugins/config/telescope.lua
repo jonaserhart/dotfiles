@@ -45,6 +45,5 @@ return {
 			{ noremap = true, desc = "Symbols (workspace)" }
 		)
 		vim.keymap.set("n", "<leader>tb", ":Telescope buffers<CR>", { noremap = true, desc = "Buffers" })
-		vim.keymap.set("n", "<leader><leader>", ":Telescope cmdline<CR>", { noremap = true, desc = "Execute command" })
 	end,
 }

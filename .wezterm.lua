@@ -4,11 +4,11 @@ local config = wezterm.config_builder()
 
 config.font = wezterm.font_with_fallback({
 	{
-		family = "Monaspace Neon",
+		family = "JetBrains Mono",
 		harfbuzz_features = { "liga=0", "calt=0", "dlig=0" },
 	},
 	{
-		family = "JetBrains Mono",
+		family = "Monaspace Neon",
 		harfbuzz_features = { "liga=0", "calt=0", "dlig=0" },
 	},
 })
@@ -35,7 +35,7 @@ config.window_padding = {
 	bottom = 3,
 }
 
-config.line_height = 1.2
+config.line_height = 1.1
 
 -- Keys
 config.send_composed_key_when_left_alt_is_pressed = true

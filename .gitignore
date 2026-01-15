@@ -12,6 +12,7 @@
 !/.config/starship.toml
 !/.config/ranger/
 /.config/nvim/lua/custom/**/*
+/.config/nvim/spell/**/*
 !/.config/zed/
 /.config/zed/conversations/**/*
 /.config/zed/prompts/**/*
