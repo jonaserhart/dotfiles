@@ -20,7 +20,6 @@ return {
 	-- Completion
 	{ "saghen/blink.cmp", import = "plugins.config.completions" },
 	{ "windwp/nvim-autopairs", import = "plugins.config.autopairs" },
-	{ "github/copilot.vim", import = "plugins.config.copilot" },
 
 	-- Core LSP, DAP and Testing frameworks
 	{ "nvim-neotest/neotest", import = "plugins.config.testing" },
