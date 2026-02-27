@@ -16,7 +16,7 @@ return {
 				priority = 100,
 			},
 			outline = {
-				layout = "float",
+        auto_preview = false,
 			},
 		})
 
@@ -27,6 +27,8 @@ return {
 		vim.keymap.set("n", "<leader>ptd", ":Lspsaga peek_type_definition<cr>", {})
 		vim.keymap.set("n", "<leader>dne", ":Lspsaga diagnostic_jump_next<cr>", {})
 		vim.keymap.set("n", "<leader>dpe", ":Lspsaga diagnostic_jump_prev<cr>", {})
+		vim.keymap.set("n", "<leader>gci", ":Lspsaga incoming_calls<cr>", {})
+		vim.keymap.set("n", "<leader>gco", ":Lspsaga outgoing_calls<cr>", {})
 		vim.keymap.set("n", "K", ":Lspsaga hover_doc<cr>", {})
 		vim.keymap.set("n", "<leader>gi", ":Lspsaga finder imp<cr>", {})
 		vim.keymap.set("n", "<leader>gr", ":Lspsaga finder ref<cr>", {})

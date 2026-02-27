@@ -1,5 +1,17 @@
 local M = {}
 
+function M.setup_user_cmds()
+  vim.api.nvim_create_user_command("Task", function(opts)
+    -- opts.args = everything typed after :AddTask
+    -- Example: :AddTask project:Work +nvim due:tomorrow
+    require("config.tasks").add_task_from_selection_with_mods(opts.args)
+  end, {
+    nargs = "*", -- allow zero or more modifiers
+    range = true,
+    desc = "Taskwarrior: add task from visual selection + optional modifiers (project/tags/etc)",
+  })
+end
+
 function M.setup_auto_cmds()
 	vim.api.nvim_create_autocmd("ColorScheme", {
 		pattern = "*",
@@ -42,6 +54,7 @@ function M.setup_auto_cmds()
 			vim.treesitter.start()
 		end,
 	})
+
 end
 
 return M

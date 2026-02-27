@@ -78,6 +78,7 @@ return {
 	config = function(_, opts)
 		require("luasnip.loaders.from_vscode").lazy_load()
 
+    require("config.utils").req_custom_module("snippets")
 		local blink = require("blink.cmp")
 		blink.setup(opts)
 	end,

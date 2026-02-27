@@ -8,13 +8,19 @@ vim.cmd("set number")
 vim.cmd("nnoremap <SPACE> <Nop>")
 vim.cmd("tnoremap <ESC><ESC> <C-\\><C-n>")
 vim.g.loaded_netrw = 1
+vim.opt.showmode = false
 vim.g.loaded_netrwPlugin = 1
 vim.g.mapleader = " "
 -- vim.cmd("set clipboard+=unnamedplus")
 vim.cmd("imap <silent><expr> <Tab> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>'")
 
 require("config.signs").setup_signs()
-require("config.autocmds").setup_auto_cmds()
+cmds = require("config.cmds")
+cmds.setup_auto_cmds()
+cmds.setup_user_cmds()
+
+keys = require("config.keymaps")
+keys.register_global_keymaps()
 
 -- spellcheck
 vim.opt.spell = true

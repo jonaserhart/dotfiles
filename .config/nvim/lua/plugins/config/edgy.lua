@@ -96,10 +96,10 @@ hi EdgyNormalNC guibg=NONE ctermbg=NONE
 				size = { width = 0.25 },
 			},
 			{
-				title = "Tasks",
-				ft = "neowarrior",
-				open = "NeowarriorOpen",
-				size = { width = 0.3 },
+				title = "Symbols",
+				ft = "sagaoutline",
+				open = "Lspsaga outline",
+				size = { width = 0.25 },
 			},
 			{
 				title = "Commit",

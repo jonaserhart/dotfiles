@@ -5,7 +5,6 @@ return {
 	{ "nvimdev/dashboard-nvim", import = "plugins.config.dashboard" },
 	{ "RRethy/vim-illuminate", import = "plugins.config.illuminate" },
 	{ "nvim-lualine/lualine.nvim", import = "plugins.config.statusline" },
-	{ "rcarriga/nvim-notify", import = "plugins.config.notify" },
 	{ "nvim-neo-tree/neo-tree.nvim", import = "plugins.config.tree" },
 	{ "nvim-telescope/telescope.nvim", import = "plugins.config.telescope" },
 	{ "nvim-telescope/telescope-ui-select.nvim", import = "plugins.config.telescope-ui-select" },
@@ -48,7 +47,7 @@ return {
   { "nvim-orgmode/orgmode", import = "plugins.config.org" },
 
 	-- Terminal
-	{ "akinsho/toggleterm.nvim", import = "plugins.config.terminal" },
+  { "akinsho/toggleterm.nvim", import = "plugins.config.terminal" },
 
 	-- Util
 	{ "willothy/wezterm.nvim", import = "plugins.config.wezterm" },

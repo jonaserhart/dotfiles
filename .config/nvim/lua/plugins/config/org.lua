@@ -15,31 +15,35 @@ return {
     local org_files_path = config_utils.get_custom_config("orgfiles", "~/orgfiles/")
     local custom_commands = config_utils.get_custom_config("custom_agenda_actions", {})
     local def_capture_templates = {
-      g = {
-        description = "todo",
-        template = "* TODO %?\n\tDEADLINE: %^{due}t",
-        target = org_files_path .. "todos.org",
-        properties = { empty_lines = 2 },
+      s = {
+        description = "journal",
+        template = "* Journal entry: %?",
+        datetree = {
+          tree_type = "day",
+          time_prompt = true
+        },
+        target = org_files_path .. "journal.org",
+        properties = { empty_lines = 2 }
       },
       m = {
         description = "meeting notes",
-        template = "* TODO %?",
+        template = "* Meeting: %?      :%?:",
         datetree = {
           tree_type = "week",
           time_prompt = true
         },
         target = org_files_path .. "meetings.org",
-        properties = { empty_lines = 2 },
+        properties = { empty_lines = 2 }
       },
       n = {
         description = "note",
-        template = "note%?",
+        template = "* %? - %^{date}t",
         datetree = {
           tree_type = "week",
           time_prompt = true
         },
-        target = org_files_path .. "notes.org",
-        properties = { empty_lines = 2 },
+        target = org_files_path .. "notes/general.org",
+        properties = { empty_lines = 2 }
       },
     }
 

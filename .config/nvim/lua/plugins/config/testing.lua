@@ -31,6 +31,11 @@ return {
 						"-tags=integration,e2e,component",
 						"-coverprofile=" .. vim.fn.getcwd() .. "/cover.out",
 					},
+          -- setup delve to also use the tags
+          dap = {
+            initialize_timeout_sec = 20,
+            args = { "--tags=integration,e2e,component" },
+          },
 				}),
 				require("neotest-jest")({
 					jestCommand = "npm test --",

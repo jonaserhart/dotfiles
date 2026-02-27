@@ -17,6 +17,15 @@ return {
 				height = 0.9,
 				width = 0.9,
 			},
+      vimgrep_arguments = {
+        "rg",
+        "--color=never",
+        "--no-heading",
+        "--with-filename",
+        "--line-number",
+        "--column",
+        "--smart-case",
+      },
 		},
 	},
 	config = function(_, opts)
