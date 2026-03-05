@@ -16,6 +16,8 @@ return {
 	{ "mvllow/modes.nvim", import = "plugins.config.modes" },
 	{ "folke/noice.nvim", import = "plugins.config.noice" },
 	{ "lukas-reineke/indent-blankline.nvim", import = "plugins.config.blankline" },
+  { "laytan/cloak.nvim", import = "plugins.config.cloak" },
+  { "github/copilot.vim", import = "plugins.config.copilot" },
 
 	-- Completion
 	{ "saghen/blink.cmp", import = "plugins.config.completions" },
