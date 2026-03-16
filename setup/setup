@@ -1,4 +1,5 @@
-echo 'Setting up mac...'
+#!/usr/bin/env bash
+echo 'Setting up...'
 
 if test ! $(which brew); then
   echo 'Installing homebrew...'
@@ -20,27 +21,3 @@ if test ! $(which nvim); then
   echo "NVIMENV default is 'private', update .profile.fish if needed"
 fi
 
-if test ! $(which go); then
-  echo 'installing golang...'
-  brew install go
-  go --version
-fi
-
-if test ! $(which task); then
-  echo 'installing taskwarrior and tui...'
-  brew install task
-  task --version
-  if test ! $(which taskwarrior-tui); then
-    brew install taskwarrior-tui
-    taskwarrior-tui --version
-  fi
-fi
-
-
-if test ! $(which wezterm); then
-  brew install --cask wezterm
-  wezterm cli spawn --new-window
-fi
-
-# font
-brew install --cask font-zed-mono
