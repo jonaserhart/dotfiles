@@ -1,6 +1,7 @@
 /*
 
 !/.gitignore
+!/install.sh
 !/.config/
 !/.wezterm.lua
 !/.vimrc
