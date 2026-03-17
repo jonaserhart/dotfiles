@@ -26,8 +26,6 @@ PS1='\[\e[2m\]$?\[\e[0m\] \[\e[2m\]\t\[\e[0m\] \[\e[1m\]\W\[\e[0m\] \[\e[38;5;69
 
 export EDITOR="nvim"
 
-export CC="gcc-15"
-
 export BASH_COMPLETION_COMPAT_DIR="$(brew --prefix)/etc/bash_completion.d"
 [[ -r "$(brew --prefix)/etc/profile.d/bash_completion.sh" ]] && . "$(brew --prefix)/etc/profile.d/bash_completion.sh"
 . "$HOME/.cargo/env"
