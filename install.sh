@@ -66,6 +66,8 @@ install_tools() {
   has git     || pkgs+=(git)
   has curl    || pkgs+=(curl)
   has unzip   || pkgs+=(unzip)
+  # ca-certificates is needed for curl to validate TLS connections
+  dpkg -s ca-certificates &>/dev/null || pkgs+=(ca-certificates)
 
   if [[ ${#pkgs[@]} -gt 0 ]]; then
     sudo apt-get update -qq
@@ -236,7 +238,7 @@ install_lsp_servers() {
   fi
 }
 
-install_homebew() {
+install_homebrew() {
   if has brew; then skip "homebrew"; return; fi
   info 'Installing homebrew...'
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -309,14 +311,13 @@ main() {
     install_neovim
     install_lazygit
     install_lsp_servers
-  else if is_macos; then
-    install_homebew
+  elif is_macos; then
+    install_homebrew
     install_tools_macos
     install_lsp_servers_macos
     install_neovim_macos
   else
     info "Unsupported OS: $(uname -s) — skipping system tools installation"
-    
   fi
 
   link_dotfiles
