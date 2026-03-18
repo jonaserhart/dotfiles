@@ -11,9 +11,7 @@ return {
   },
   ft = { "org" },
   config = function()
-    local config_utils = require("config.utils")
-    local org_files_path = config_utils.get_custom_config("orgfiles", "~/orgfiles/")
-    local custom_commands = config_utils.get_custom_config("custom_agenda_actions", {})
+    local org_files_path = "~/orgfiles/"
     local def_capture_templates = {
       s = {
         description = "journal",
@@ -47,9 +45,7 @@ return {
       },
     }
 
-    local custom_capture_templates = config_utils.get_custom_config("custom_org_cap_templates", {})
-
-    local org_cap_templates = config_utils.merge_tables(def_capture_templates, custom_capture_templates)
+    local org_cap_templates = def_capture_templates
 
     -- Setup orgmode
     require("orgmode").setup({
@@ -61,7 +57,6 @@ return {
       win_border = 'none',
       org_agenda_filter = "/",
       org_capture_templates = org_cap_templates,
-      org_agenda_custom_commands = custom_commands,
       org_todo_keywords = {
         "TODO(t)",
         "PROGRESS(p)",

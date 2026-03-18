@@ -4,7 +4,6 @@ return {
 	config = function()
 		local version = vim.version()
 		local version_string = string.format("NeoVim v%s.%s.%s", version.major, version.minor, version.patch)
-		local custom_actions = require("config.utils").get_custom_config("custom_dashboard_actions", {})
 
 		local center = {
 			{
@@ -17,7 +16,6 @@ return {
 				key = "w",
 				key_format = "  %s",
 			},
-			table.unpack(custom_actions),
 			{
 				icon = "󱞁 ",
 				icon_hl = "Title",

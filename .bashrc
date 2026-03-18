@@ -31,7 +31,10 @@ if [[ -f "$HOME/.cargo/env" ]]; then
 . "$HOME/.cargo/env"
 fi
 
-if [[ -f "$(brew --prefix)/etc/profile.d/bash_completion.sh" ]]; then
-  export BASH_COMPLETION_COMPAT_DIR="$(brew --prefix)/etc/bash_completion.d"
-  [[ -r "$(brew --prefix)/etc/profile.d/bash_completion.sh" ]] && . "$(brew --prefix)/etc/profile.d/bash_completion.sh"
+# only if on mac os
+if [[ "$(uname)" == "Darwin" ]]; then
+  if [[ -f "$(brew --prefix)/etc/profile.d/bash_completion.sh" ]]; then
+    export BASH_COMPLETION_COMPAT_DIR="$(brew --prefix)/etc/bash_completion.d"
+    [[ -r "$(brew --prefix)/etc/profile.d/bash_completion.sh" ]] && . "$(brew --prefix)/etc/profile.d/bash_completion.sh"
+  fi
 fi
