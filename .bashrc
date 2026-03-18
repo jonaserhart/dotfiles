@@ -22,10 +22,16 @@ PROMPT_COMMAND='PS1_CMD1=$(git branch --show-current 2>/dev/null)'
 
 
 # PS1='\[\e[2m\]$?\[\e[0m\] \[\e[2m\]\t\[\e[0m\] \[\e[1m\]\W\[\e[0m\] \[\e[38;5;69m\](\[\e[38;5;69m\]${PS1_CMD1}\[\e[38;5;69m\])\[\e[0m\]  \$ '
-PS1='\[\e[2m\]$?\[\e[0m\] \[\e[2m\]\t\[\e[0m\] \[\e[1m\]\W\[\e[0m\] \[\e[38;5;69m\]\[\e[38;5;69m\] ${PS1_CMD1}\[\e[38;5;69m\]\[\e[0m\]   \$ '
+PS1='\[\e[2m\]$?\[\e[0m\] \[\e[2m\]\t\[\e[0m\] \[\e[1m\]\W\[\e[0m\] \[\e[38;5;69m\]\[\e[38;5;69m\]${PS1_CMD1}\[\e[38;5;69m\]\[\e[0m\]   \$ '
 
 export EDITOR="nvim"
 
-export BASH_COMPLETION_COMPAT_DIR="$(brew --prefix)/etc/bash_completion.d"
-[[ -r "$(brew --prefix)/etc/profile.d/bash_completion.sh" ]] && . "$(brew --prefix)/etc/profile.d/bash_completion.sh"
+if [[ -f "$HOME/.cargo/env" ]]; then
+  export PATH="$HOME/.cargo/bin:$PATH"
 . "$HOME/.cargo/env"
+fi
+
+if [[ -f "$(brew --prefix)/etc/profile.d/bash_completion.sh" ]]; then
+  export BASH_COMPLETION_COMPAT_DIR="$(brew --prefix)/etc/bash_completion.d"
+  [[ -r "$(brew --prefix)/etc/profile.d/bash_completion.sh" ]] && . "$(brew --prefix)/etc/profile.d/bash_completion.sh"
+fi

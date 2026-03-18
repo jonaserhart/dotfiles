@@ -11,6 +11,8 @@ success() { echo "[install] ✓ $*"; }
 skip()    { echo "[install] – $* (already installed, skipping)"; }
 
 is_linux() { [[ "$(uname -s)" == "Linux" ]]; }
+is_macos() { [[ "$(uname -s)" == "Darwin" ]]; }
+
 has() { command -v "$1" &>/dev/null; }
 
 # ─── Neovim ──────────────────────────────────────────────────────────────────
@@ -234,6 +236,65 @@ install_lsp_servers() {
   fi
 }
 
+install_homebew() {
+  if has brew; then skip "homebrew"; return; fi
+  info 'Installing homebrew...'
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+}
+
+install_lsp_servers_macos() {
+  info "Installing LSP servers via homebrew..."
+  if has go; then
+    brew install --quiet --no-cache gopls golangci-lint-langserver
+    success "gopls, golangci-lint-langserver"
+  else
+    info "Go not found — skipping Go LSPs (gopls, golangci-lint-langserver)"
+  fi
+
+  if has helm; then
+    brew install --quiet --no-cache helm-ls
+    success "helm-ls"
+  else
+    info "helm not found — skipping helm-ls"
+  fi
+
+  if has rustup; then
+    brew install --quiet --no-cache rust-analyzer
+    success "rust-analyzer"
+  else
+    info "rustup not found — skipping rust-analyzer"
+  fi
+
+  if has npm; then
+    brew install --quiet --no-cache bash-language-server
+    success "bash-language-server"
+  else
+    info "npm not found — skipping bash-language-server"
+  fi
+
+  brew install --quiet --no-cache lua-language-server
+  success "lua-language-server"
+}
+
+install_tools_macos() {
+  info "Installing system tools via homebrew..."
+  brew install --quiet --no-cache \
+    git \
+    node \
+    tree-sitter-cli \
+    lazygit
+  success "homebrew packages: git, node, tree-sitter-cli, lazygit"
+}
+
+install_neovim_macos() {
+  if has nvim && nvim --version &>/dev/null; then skip "neovim"; return; fi
+  info "Installing Neovim via homebrew..."
+  brew install --quiet --no-cache neovim
+  success "neovim $(nvim --version | head -1)"
+}
+
 # ─── Bootstrap Neovim plugins ─────────────────────────────────────────────────
 bootstrap_nvim() {
   info "Bootstrapping lazy.nvim plugins (headless)..."
@@ -247,12 +308,18 @@ main() {
     install_tools
     install_neovim
     install_lazygit
+    install_lsp_servers
+  else if is_macos; then
+    install_homebew
+    install_tools_macos
+    install_lsp_servers_macos
+    install_neovim_macos
   else
-    info "Non-Linux host detected — skipping package installs (run setup/setup for macOS)."
+    info "Unsupported OS: $(uname -s) — skipping system tools installation"
+    
   fi
 
   link_dotfiles
-  if is_linux; then install_lsp_servers; fi
   bootstrap_nvim
 
   success "Dotfiles installed. Open a new shell or run: source ~/.bashrc"
