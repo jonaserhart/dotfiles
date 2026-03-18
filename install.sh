@@ -1,6 +1,12 @@
 #!/usr/bin/env bash
 # Dotfiles install script — runs automatically in devcontainers and Codespaces.
 # Also safe to run manually on a fresh Linux machine.
+
+# Re-exec with bash if invoked as sh (e.g. by devpod/devcontainer runners).
+if [ -z "${BASH_VERSION:-}" ]; then
+  exec bash "$0" "$@"
+fi
+
 set -e
 
 DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -204,37 +210,6 @@ install_lsp_servers() {
     fi
   else
     info "Go not found — skipping Go LSPs (gopls, golangci-lint-langserver)"
-  fi
-
-  # helm-ls — only if helm is present
-  if has helm && ! has helm_ls; then
-    info "Installing helm-ls ${HELM_LS_VERSION}..."
-    local arch
-    arch=$(uname -m)
-    local helm_ls_arch
-    if [[ "$arch" == "x86_64" ]]; then helm_ls_arch="amd64"; else helm_ls_arch="arm64"; fi
-    curl -fsSL "https://github.com/mrjosh/helm-ls/releases/download/${HELM_LS_VERSION}/helm_ls_linux_${helm_ls_arch}" \
-      -o /tmp/helm_ls && sudo install -m 0755 /tmp/helm_ls /usr/local/bin/helm_ls
-    success "helm_ls"
-  else
-    has helm || info "helm not found — skipping helm-ls"
-    has helm_ls && skip "helm_ls"
-  fi
-
-  # rust-analyzer — only if rustup/cargo is present
-  if has rustup && ! has rust-analyzer; then
-    info "Installing rust-analyzer..."
-    rustup component add rust-analyzer
-    # rustup installs it as 'rust-analyzer' in the toolchain bin — link to PATH
-    local ra_path
-    ra_path=$(rustup which rust-analyzer 2>/dev/null || true)
-    if [[ -n "$ra_path" ]]; then
-      sudo ln -sf "$ra_path" /usr/local/bin/rust-analyzer
-    fi
-    success "rust-analyzer"
-  else
-    has rustup || info "rustup not found — skipping rust-analyzer"
-    has rust-analyzer && skip "rust-analyzer"
   fi
 }
 
