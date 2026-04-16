@@ -1,6 +1,13 @@
 local wezterm = require("wezterm")
+local mux = wezterm.mux
+
+wezterm.on("gui-startup", function(cmd)
+	local _, _, window = mux.spawn_window(cmd or {})
+	window:gui_window():maximize()
+end)
 
 local config = wezterm.config_builder()
+
 
 config.font = wezterm.font_with_fallback({
 	{
@@ -36,6 +43,43 @@ config.freetype_load_flags = 'NO_HINTING'
 
 config.font_size = 15
 
+config.window_decorations = "RESIZE"
+
+local direction_keys = {
+    h = "Left",
+    j = "Down",
+    k = "Up",
+    l = "Right",
+}
+
+local function is_vim(pane)
+  local proc_info = pane:get_foreground_process_info()
+  if not proc_info then return false end
+  
+  local proc_name = proc_info.name
+  return proc_name == 'nvim' or proc_name == 'vim'
+end
+
+local function split_nav(key)
+    return {
+        key = key,
+        mods = "CTRL",
+        action = wezterm.action_callback(function(win, pane)
+            wezterm.log_info("pane variables: " .. wezterm.format(pane:get_user_vars()))
+            if is_vim(pane) then
+                -- pass the keys through to vim/nvim
+                win:perform_action({
+                    SendKey = { key = key, mods = "CTRL" },
+                }, pane)
+            else
+                wezterm.log_info("activating pane in direction: " .. direction_keys[key])
+                win:perform_action({ ActivatePaneDirection = direction_keys[key] }, pane)
+            end
+        end),
+    }
+end
+
+
 -- Hide tab bar
 config.hide_tab_bar_if_only_one_tab = true
 
@@ -60,7 +104,9 @@ config.line_height = 1.2
 
 -- Keys
 config.send_composed_key_when_left_alt_is_pressed = true
-config.leader = { key = "w", mods = "CTRL", timeout_milliseconds = 1000 }
+config.leader = { key = "w", mods = "CTRL", timeout_milliseconds = 1001 }
+
+
 config.keys = {
 	{
 		key = "\\",
@@ -72,25 +118,53 @@ config.keys = {
 		mods = "LEADER",
 		action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }),
 	},
-	{
-		key = "h",
-		mods = "LEADER",
-		action = wezterm.action.ActivatePaneDirection("Left"),
-	},
-	{
-		key = "j",
-		mods = "LEADER",
-		action = wezterm.action.ActivatePaneDirection("Down"),
-	},
-	{
-		key = "k",
-		mods = "LEADER",
-		action = wezterm.action.ActivatePaneDirection("Up"),
-	},
-	{
-		key = "l",
-		mods = "LEADER",
-		action = wezterm.action.ActivatePaneDirection("Right"),
-	},
+  {
+    key = "h",
+    mods = "CTRL|SHIFT",
+    action = wezterm.action.AdjustPaneSize({ "Left", 5 }),
+  },
+  {
+    key = "j",
+    mods = "CTRL|SHIFT",
+    action = wezterm.action.AdjustPaneSize({ "Down", 5 }),
+  },
+  {
+    key = "k",
+    mods = "CTRL|SHIFT",
+    action = wezterm.action.AdjustPaneSize({ "Up", 5 }),
+  },
+  {
+    key = "l",
+    mods = "CTRL|SHIFT",
+    action = wezterm.action.AdjustPaneSize({ "Right", 5 }),
+  },
+  { key = "[", mods = "LEADER", action = wezterm.action.ActivateCopyMode },
+  split_nav("h"),
+  split_nav("j"),
+  split_nav("k"),
+  split_nav("l"),
+  -- alternative movements when inside nvim
+  {
+    key = "h",
+    mods = "CMD",
+    action = wezterm.action.ActivatePaneDirection("Left"),
+  },
+  {
+    key = "j",
+    mods = "CMD",
+    action = wezterm.action.ActivatePaneDirection("Down"),
+  },
+  {
+    key = "k",
+    mods = "CMD",
+    action = wezterm.action.ActivatePaneDirection("Up"),
+  },
+  {
+    key = "l",
+    mods = "CMD",
+    action = wezterm.action.ActivatePaneDirection("Right"),
+  },
+  { key = 'E', mods = 'CTRL', action = wezterm.action.ShowDebugOverlay },
 }
+
 return config
