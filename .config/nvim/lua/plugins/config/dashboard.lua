@@ -22,7 +22,7 @@ return {
 				desc = "Orgfiles",
 				desc_hl = "String",
 				key_hl = "Number",
-				action = "WorkspacesOpen org_files",
+				action = "WorkspacesOpen orgfiles",
 				key = "o",
 				key_format = "  %s",
 			},

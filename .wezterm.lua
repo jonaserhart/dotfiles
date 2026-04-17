@@ -6,6 +6,14 @@ wezterm.on("gui-startup", function(cmd)
 	window:gui_window():maximize()
 end)
 
+wezterm.on("update-right-status", function(window, pane)
+  window:set_right_status(window:active_workspace())
+end)
+-- load plugin
+local workspace_switcher = wezterm.plugin.require("https://github.com/MLFlexer/smart_workspace_switcher.wezterm")
+-- set path to zoxide
+workspace_switcher.zoxide_path = "/opt/homebrew/bin/zoxide"
+
 local config = wezterm.config_builder()
 
 
@@ -88,7 +96,7 @@ config.initial_cols = 130
 config.initial_rows = 24
 
 -- Color scheme
-config.color_scheme = "OneDark (base16)"
+config.color_scheme = "Catppuccin Mocha"
 
 config.window_background_opacity = 0.9
 config.macos_window_background_blur = 15
@@ -165,6 +173,12 @@ config.keys = {
     action = wezterm.action.ActivatePaneDirection("Right"),
   },
   { key = 'E', mods = 'CTRL', action = wezterm.action.ShowDebugOverlay },
+  { key = "s", mods = "CTRL|SHIFT", action = workspace_switcher.switch_workspace() },
+  { key = "t", mods = "CTRL|SHIFT", action = wezterm.action.ShowLauncherArgs({ flags = "FUZZY|WORKSPACES" }) },
+  { key = "[", mods = "CTRL|SHIFT", action = wezterm.action.SwitchWorkspaceRelative(1) },
+  { key = "]", mods = "CTRL|SHIFT", action = wezterm.action.SwitchWorkspaceRelative(-1) },
 }
+
+-- keymaps
 
 return config

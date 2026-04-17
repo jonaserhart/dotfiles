@@ -12,6 +12,9 @@ alias gs='git status'
 alias gcap='git commit --amend --no-edit && git push --force-with-lease'
 alias tasks='taskwarrior-tui'
 alias tc='toolchain'
+alias p='pbpaste'
+alias c='pbcopy'
+alias ws='wezterm cli rename-workspace'
 
 # for when I make my usual typos
 alias nv='nvim'
