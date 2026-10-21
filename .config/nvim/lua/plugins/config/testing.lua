@@ -23,7 +23,6 @@ return {
 		require("neotest").setup({
 			adapters = {
 				require("neotest-golang")({
-					runner = "gotestsum",
 					go_test_args = {
 						"-count=1",
 						"-race",
@@ -31,11 +30,21 @@ return {
 						"-tags=integration,e2e,component",
 						"-coverprofile=" .. vim.fn.getcwd() .. "/cover.out",
 					},
-          -- setup delve to also use the tags
-          dap = {
-            initialize_timeout_sec = 20,
-            args = { "--tags=integration,e2e,component" },
+					-- setup delve to also use the tags
+					dap_go_opts = {
+          dap_configurations = {
+          {
+            type = "go",
+            name = "Attach remote",
+            mode = "remote",
+            request = "attach",
           },
+          },
+          delve = {
+							initialize_timeout_sec = 50,
+							args = { "--tags=integration,e2e,component" },
+						},
+					},
 				}),
 				require("neotest-jest")({
 					jestCommand = "npm test --",

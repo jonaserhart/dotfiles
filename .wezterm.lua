@@ -35,16 +35,33 @@ config.font = wezterm.font_with_fallback({
       "calt=1",
     },
 	},
-	-- {
-	-- 	family = "JetBrains Mono",
-	--    weight = "Bold",
-	--    harfbuzz_features = {
-	--      "ss01=0",
-	--      "ss02=0",
-	--      "ss19=1",
-	--      "ss20=0", 
-	--    },
-	-- },
+	{
+		family = "JetBrains Mono",
+	   weight = "Bold",
+	   harfbuzz_features = {
+      -- "ss01=1",
+      -- "ss02=1",
+      -- "ss03=1",
+      -- "ss04=1",
+      -- "ss05=1",
+      -- "ss06=1",
+      -- "ss07=1",
+      -- "ss08=1",
+      -- "ss09=1",
+      -- "ss10=1",
+      -- "calt=1",
+	   },
+	},
+	{
+		family = "JetBrains Mono",
+	   weight = "Bold",
+	   harfbuzz_features = {
+	     "ss01=0",
+	     "ss02=0",
+	     "ss19=1",
+	     "ss20=0", 
+	   },
+	}
 })
 
 config.freetype_load_flags = 'NO_HINTING'
@@ -108,7 +125,7 @@ config.window_padding = {
 	bottom = 3,
 }
 
-config.line_height = 1.2
+config.line_height = 1.8
 
 -- Keys
 config.send_composed_key_when_left_alt_is_pressed = true
@@ -116,6 +133,16 @@ config.leader = { key = "w", mods = "CTRL", timeout_milliseconds = 1001 }
 
 
 config.keys = {
+  {
+    key = "n",
+    mods = "CMD",
+		action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }),
+  },
+  {
+    key = "m",
+    mods = "CMD",
+		action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }),
+  },
 	{
 		key = "\\",
 		mods = "LEADER",
