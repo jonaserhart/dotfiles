@@ -18,7 +18,7 @@ alias p='pbpaste'
 alias c='pbcopy'
 alias ws='wezterm cli rename-workspace'
 alias mvcreds='mv ~/Downloads/credentials ~/.aws/credentials'
-alias gotest='KUBEBUILDER_ASSETS="$(pwd)/bin/k8s/1.37.0-darwin-arm64" gotestsum --format pkgname-and-test-fails --format-icons codicons'
+alias gotest='KUBEBUILDER_ASSETS="$(pwd)/bin/k8s/1.37.0-darwin-arm64" gotestsum --format testdox --format-icons codicons'
 alias ghwhich='gh auth status --active --hostname github.com --json hosts | jq -r ".hosts.\"github.com\"[0].login"'
 
 # for when I make my usual typos
@@ -48,3 +48,8 @@ if [[ "$(uname)" == "Darwin" ]]; then
     [[ -r "$(brew --prefix)/etc/profile.d/bash_completion.sh" ]] && . "$(brew --prefix)/etc/profile.d/bash_completion.sh"
   fi
 fi
+
+# support custom bash completion files
+for bcfile in ~/.bash_completions/* ; do
+  [ -f "$bcfile" ] && . $bcfile
+done
